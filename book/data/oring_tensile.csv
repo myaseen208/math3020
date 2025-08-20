@@ -1,0 +1,2 @@
+sample_size,sample_mean,sample_median,sample_std_dev,sample_min,sample_max,std_error,t_value,margin_error,ci_lower,ci_upper
+8,1027.1,1027,11.7,1010,1049,4.14,2.36462425159278,9.8,1017.3,1036.9

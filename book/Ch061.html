@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.20">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ch061 – Math-3020: Statistics for Science &amp; Engineering</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/LogoSMSS.webp" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bd0f20613ab34a035844aaae9062fb4e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b26e8146b40141c674d57af9b78800f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #522D80;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #522D80;
+      }
+</style>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/custom1.css">
+<link rel="stylesheet" href="styles/slides.css">
+</head>
+
+<body class="docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/LogoSMSS.webp" alt="SMSS Logo" class="navbar-logo light-content">
+    <img src="../images/LogoSMSS.webp" alt="SMSS Logo" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Math-3020</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book/index.html"> 
+<span class="menu-text">Lecture Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../slides/index.html"> 
+<span class="menu-text">Lecture Slides</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../introR/index.html"> 
+<span class="menu-text">Intro to R</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
+        <li class="dropdown-header">Data Sets</li>
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/MYaseen208"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/MYaseen208"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/muhammad-yaseen-247800b4/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text">LinkedIn</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#building-empirical-models" id="toc-building-empirical-models" class="nav-link active" data-scroll-target="#building-empirical-models"><span class="header-section-number">1</span> Building Empirical Models</a>
+  <ul class="collapse">
+  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression"><span class="header-section-number">1.1</span> Simple Linear Regression</a>
+  <ul class="collapse">
+  <li><a href="#model-definition" id="toc-model-definition" class="nav-link" data-scroll-target="#model-definition"><span class="header-section-number">1.1.1</span> Model Definition</a></li>
+  <li><a href="#least-squares-estimation" id="toc-least-squares-estimation" class="nav-link" data-scroll-target="#least-squares-estimation"><span class="header-section-number">1.1.2</span> Least Squares Estimation</a></li>
+  <li><a href="#example-steel-strength-analysis" id="toc-example-steel-strength-analysis" class="nav-link" data-scroll-target="#example-steel-strength-analysis"><span class="header-section-number">1.1.3</span> Example: Steel Strength Analysis</a></li>
+  </ul></li>
+  <li><a href="#statistical-inference" id="toc-statistical-inference" class="nav-link" data-scroll-target="#statistical-inference"><span class="header-section-number">1.2</span> Statistical Inference</a>
+  <ul class="collapse">
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">1.2.1</span> Hypothesis Testing</a></li>
+  <li><a href="#confidence-and-prediction-intervals" id="toc-confidence-and-prediction-intervals" class="nav-link" data-scroll-target="#confidence-and-prediction-intervals"><span class="header-section-number">1.2.2</span> Confidence and Prediction Intervals</a></li>
+  <li><a href="#example-inference-results" id="toc-example-inference-results" class="nav-link" data-scroll-target="#example-inference-results"><span class="header-section-number">1.2.3</span> Example: Inference Results</a></li>
+  </ul></li>
+  <li><a href="#model-adequacy" id="toc-model-adequacy" class="nav-link" data-scroll-target="#model-adequacy"><span class="header-section-number">1.3</span> Model Adequacy</a>
+  <ul class="collapse">
+  <li><a href="#residual-analysis" id="toc-residual-analysis" class="nav-link" data-scroll-target="#residual-analysis"><span class="header-section-number">1.3.1</span> Residual Analysis</a></li>
+  <li><a href="#example-model-diagnostics" id="toc-example-model-diagnostics" class="nav-link" data-scroll-target="#example-model-diagnostics"><span class="header-section-number">1.3.2</span> Example: Model Diagnostics</a></li>
+  </ul></li>
+  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis"><span class="header-section-number">1.4</span> Correlation Analysis</a>
+  <ul class="collapse">
+  <li><a href="#correlation-coefficient" id="toc-correlation-coefficient" class="nav-link" data-scroll-target="#correlation-coefficient"><span class="header-section-number">1.4.1</span> Correlation Coefficient</a></li>
+  <li><a href="#example-correlation-analysis" id="toc-example-correlation-analysis" class="nav-link" data-scroll-target="#example-correlation-analysis"><span class="header-section-number">1.4.2</span> Example: Correlation Analysis</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">1.5</span> Summary</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="building-empirical-models" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Building Empirical Models</h1>
+<div class="fullwidth">
+<p><a href="./images/Fig5.0.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./images/Fig5.0.webp" class="img-fluid" style="width:100.0%"></a></p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Major Themes of Chapter 6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Simple Linear Regression:</strong> Modeling linear relationships between two variables</li>
+<li><strong>Least Squares Estimation:</strong> Finding best-fitting lines through data</li>
+<li><strong>Statistical Inference:</strong> Testing significance and constructing intervals</li>
+<li><strong>Model Adequacy:</strong> Checking assumptions and validating models</li>
+<li><strong>Correlation Analysis:</strong> Measuring strength of linear relationships</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After careful study of this chapter, you should be able to do the following:</p>
+<ol type="1">
+<li>Fit <span style="color:green">simple linear regression</span> models using least squares estimation.</li>
+<li>Conduct <span style="color:green">hypothesis tests</span> for regression parameters.</li>
+<li>Construct <span style="color:green">confidence intervals</span> and <span style="color:green">prediction intervals</span>.</li>
+<li>Check <span style="color:green">model adequacy</span> using residual analysis.</li>
+<li>Calculate and interpret <span style="color:green">correlation coefficients</span>.</li>
+<li>Apply regression and correlation in <span style="color:green">engineering contexts</span>.</li>
+</ol>
+</div>
+</div>
+<section id="simple-linear-regression" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="simple-linear-regression"><span class="header-section-number">1.1</span> Simple Linear Regression</h2>
+<section id="model-definition" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="model-definition"><span class="header-section-number">1.1.1</span> Model Definition</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Simple Linear Regression Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">y_i = \beta_0 + \beta_1 x_i + \epsilon_i</span></p>
+<p>where: - <span class="math inline">y_i</span> = response variable - <span class="math inline">x_i</span> = predictor variable<br>
+- <span class="math inline">\beta_0</span> = intercept parameter - <span class="math inline">\beta_1</span> = slope parameter - <span class="math inline">\epsilon_i \sim N(0, \sigma^2)</span> = random error</p>
+<p><strong>Assumptions:</strong> - Linear relationship - Independent observations - Constant variance - Normal errors</p>
+</div>
+</div>
+</section>
+<section id="least-squares-estimation" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="least-squares-estimation"><span class="header-section-number">1.1.2</span> Least Squares Estimation</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Parameter Estimates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\begin{aligned}
+\hat{\beta}_1 &amp;= \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2} \\
+\hat{\beta}_0 &amp;= \bar{y} - \hat{\beta}_1 \bar{x}
+\end{aligned}</span></p>
+<p><strong>Fitted Model:</strong> <span class="math display">\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i</span></p>
+<p><strong>Residuals:</strong> <span class="math display">e_i = y_i - \hat{y}_i</span></p>
+</div>
+</div>
+</section>
+<section id="example-steel-strength-analysis" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="example-steel-strength-analysis"><span class="header-section-number">1.1.3</span> Example: Steel Strength Analysis</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example 6.1: Steel Hardness vs Tensile Strength
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Analysis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Steel Strength vs Hardness Data Summary:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       n Hardness_Mean Hardness_SD Hardness_Min Hardness_Max Strength_Mean
+   &lt;int&gt;         &lt;num&gt;       &lt;num&gt;        &lt;num&gt;        &lt;num&gt;         &lt;num&gt;
+1:    20      62.03234    12.53884     41.68238     78.27333      169.2171
+   Strength_SD Strength_Min Strength_Max
+         &lt;num&gt;        &lt;num&gt;        &lt;num&gt;
+1:     29.0103     120.2922     220.4809</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "First 10 observations:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    specimen hardness strength
+       &lt;int&gt;    &lt;num&gt;    &lt;num&gt;
+ 1:        1 51.50310 153.5504
+ 2:        2 71.53221 196.7090
+ 3:        3 56.35908 159.1039
+ 4:        4 75.32070 204.1872
+ 5:        5 77.61869 204.6000
+ 6:        6 41.82226 133.8510
+ 7:        7 61.12422 171.7934
+ 8:        8 75.69676 188.5090
+ 9:        9 62.05740 175.7543
+10:       10 58.26459 156.8791</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(collapse)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">library</span>(scales)</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># Steel strength vs hardness data (simple linear regression)</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb5-12"><a href="#cb5-12"></a>steel_data <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb5-13"><a href="#cb5-13"></a>  <span class="at">specimen =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,</span>
+<span id="cb5-14"><a href="#cb5-14"></a>  <span class="at">hardness =</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="at">min =</span> <span class="dv">40</span>, <span class="at">max =</span> <span class="dv">80</span>),</span>
+<span id="cb5-15"><a href="#cb5-15"></a>  <span class="at">strength =</span> <span class="cn">NULL</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>)</span>
+<span id="cb5-17"><a href="#cb5-17"></a></span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="co"># Create realistic relationship with some noise</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a>steel_data[, strength <span class="sc">:</span><span class="er">=</span> <span class="dv">15</span> <span class="sc">+</span> <span class="fl">2.5</span> <span class="sc">*</span> hardness <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">8</span>)]</span>
+<span id="cb5-20"><a href="#cb5-20"></a></span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="co"># Summary statistics</span></span>
+<span id="cb5-22"><a href="#cb5-22"></a>steel_summary <span class="ot">&lt;-</span> steel_data <span class="sc">%&gt;%</span></span>
+<span id="cb5-23"><a href="#cb5-23"></a>  <span class="fu">fsummarise</span>(</span>
+<span id="cb5-24"><a href="#cb5-24"></a>    <span class="at">n =</span> <span class="fu">fnobs</span>(hardness),</span>
+<span id="cb5-25"><a href="#cb5-25"></a>    <span class="at">Hardness_Mean =</span> <span class="fu">fmean</span>(hardness),</span>
+<span id="cb5-26"><a href="#cb5-26"></a>    <span class="at">Hardness_SD =</span> <span class="fu">fsd</span>(hardness),</span>
+<span id="cb5-27"><a href="#cb5-27"></a>    <span class="at">Hardness_Min =</span> <span class="fu">fmin</span>(hardness),</span>
+<span id="cb5-28"><a href="#cb5-28"></a>    <span class="at">Hardness_Max =</span> <span class="fu">fmax</span>(hardness),</span>
+<span id="cb5-29"><a href="#cb5-29"></a>    <span class="at">Strength_Mean =</span> <span class="fu">fmean</span>(strength),</span>
+<span id="cb5-30"><a href="#cb5-30"></a>    <span class="at">Strength_SD =</span> <span class="fu">fsd</span>(strength),</span>
+<span id="cb5-31"><a href="#cb5-31"></a>    <span class="at">Strength_Min =</span> <span class="fu">fmin</span>(strength),</span>
+<span id="cb5-32"><a href="#cb5-32"></a>    <span class="at">Strength_Max =</span> <span class="fu">fmax</span>(strength)</span>
+<span id="cb5-33"><a href="#cb5-33"></a>  )</span>
+<span id="cb5-34"><a href="#cb5-34"></a></span>
+<span id="cb5-35"><a href="#cb5-35"></a><span class="fu">print</span>(<span class="st">"Steel Strength vs Hardness Data Summary:"</span>)</span>
+<span id="cb5-36"><a href="#cb5-36"></a><span class="fu">print</span>(steel_summary)</span>
+<span id="cb5-37"><a href="#cb5-37"></a></span>
+<span id="cb5-38"><a href="#cb5-38"></a><span class="co"># Detailed data view</span></span>
+<span id="cb5-39"><a href="#cb5-39"></a><span class="fu">print</span>(<span class="st">"First 10 observations:"</span>)</span>
+<span id="cb5-40"><a href="#cb5-40"></a><span class="fu">print</span>(<span class="fu">head</span>(steel_data, <span class="dv">10</span>))</span>
+<span id="cb5-41"><a href="#cb5-41"></a></span>
+<span id="cb5-42"><a href="#cb5-42"></a><span class="co"># Create data directory if needed</span></span>
+<span id="cb5-43"><a href="#cb5-43"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">"data"</span>)) <span class="fu">dir.create</span>(<span class="st">"data"</span>)</span>
+<span id="cb5-44"><a href="#cb5-44"></a></span>
+<span id="cb5-45"><a href="#cb5-45"></a><span class="co"># Write data to CSV</span></span>
+<span id="cb5-46"><a href="#cb5-46"></a><span class="fu">fwrite</span>(steel_data, <span class="st">"data/steel_strength.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Visualization</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'beta0_hat' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'beta0_hat' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'fitted_values' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'fitted_values' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'residual_data' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'p1' not found</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Simple linear regression visualization</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> steel_data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> hardness, <span class="at">y =</span> strength)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-6"><a href="#cb12-6"></a>    <span class="at">x =</span> <span class="st">"Hardness"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7"></a>    <span class="at">y =</span> <span class="st">"Tensile Strength"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8"></a>    <span class="at">title =</span> <span class="st">"Simple Linear Regression: Tensile Strength vs Hardness"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9"></a>    <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"ŷ ="</span>, <span class="fu">round</span>(beta0_hat, <span class="dv">2</span>), <span class="st">"+"</span>, <span class="fu">round</span>(beta1_hat, <span class="dv">2</span>), <span class="st">"x, R² ="</span>, <span class="fu">round</span>(R_squared, <span class="dv">3</span>))</span>
+<span id="cb12-10"><a href="#cb12-10"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a>  <span class="fu">theme</span>(</span>
+<span id="cb12-13"><a href="#cb12-13"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb12-14"><a href="#cb12-14"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb12-15"><a href="#cb12-15"></a>  )</span>
+<span id="cb12-16"><a href="#cb12-16"></a></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="co"># Residuals vs fitted</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a>fitted_values <span class="ot">&lt;-</span> beta0_hat <span class="sc">+</span> beta1_hat <span class="sc">*</span> steel_data<span class="sc">$</span>hardness</span>
+<span id="cb12-19"><a href="#cb12-19"></a>residuals <span class="ot">&lt;-</span> steel_data<span class="sc">$</span>strength <span class="sc">-</span> fitted_values</span>
+<span id="cb12-20"><a href="#cb12-20"></a></span>
+<span id="cb12-21"><a href="#cb12-21"></a>residual_data <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb12-22"><a href="#cb12-22"></a>  <span class="at">fitted =</span> fitted_values,</span>
+<span id="cb12-23"><a href="#cb12-23"></a>  <span class="at">residuals =</span> residuals,</span>
+<span id="cb12-24"><a href="#cb12-24"></a>  <span class="at">hardness =</span> steel_data<span class="sc">$</span>hardness</span>
+<span id="cb12-25"><a href="#cb12-25"></a>)</span>
+<span id="cb12-26"><a href="#cb12-26"></a></span>
+<span id="cb12-27"><a href="#cb12-27"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> residual_data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> fitted, <span class="at">y =</span> residuals)) <span class="sc">+</span></span>
+<span id="cb12-28"><a href="#cb12-28"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb12-29"><a href="#cb12-29"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb12-30"><a href="#cb12-30"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb12-31"><a href="#cb12-31"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-32"><a href="#cb12-32"></a>    <span class="at">x =</span> <span class="st">"Fitted Values"</span>,</span>
+<span id="cb12-33"><a href="#cb12-33"></a>    <span class="at">y =</span> <span class="st">"Residuals"</span>,</span>
+<span id="cb12-34"><a href="#cb12-34"></a>    <span class="at">title =</span> <span class="st">"Residuals vs Fitted Values"</span></span>
+<span id="cb12-35"><a href="#cb12-35"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-36"><a href="#cb12-36"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb12-37"><a href="#cb12-37"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb12-38"><a href="#cb12-38"></a></span>
+<span id="cb12-39"><a href="#cb12-39"></a><span class="co"># Combine plots</span></span>
+<span id="cb12-40"><a href="#cb12-40"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="statistical-inference" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="statistical-inference"><span class="header-section-number">1.2</span> Statistical Inference</h2>
+<section id="hypothesis-testing" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">1.2.1</span> Hypothesis Testing</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tests for Regression Parameters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Test for Slope:</strong> <span class="math display">H_0: \beta_1 = 0 \text{ vs } H_1: \beta_1 \neq 0</span></p>
+<p><strong>Test Statistic:</strong> <span class="math display">t = \frac{\hat{\beta}_1}{SE(\hat{\beta}_1)} \sim t_{n-2}</span></p>
+<p><strong>ANOVA F-Test:</strong> <span class="math display">F = \frac{MS_R}{MS_E} \sim F_{1,n-2}</span></p>
+</div>
+</div>
+</section>
+<section id="confidence-and-prediction-intervals" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="confidence-and-prediction-intervals"><span class="header-section-number">1.2.2</span> Confidence and Prediction Intervals</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Interval Estimation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Confidence Interval for β₁:</strong> <span class="math display">\hat{\beta}_1 \pm t_{\alpha/2, n-2} \cdot SE(\hat{\beta}_1)</span></p>
+<p><strong>Prediction Interval at x₀:</strong> <span class="math display">\hat{y}_0 \pm t_{\alpha/2, n-2} \sqrt{MS_E\left(1 + \frac{1}{n} + \frac{(x_0 - \bar{x})^2}{S_{xx}}\right)}</span></p>
+<p><strong>Coefficient of Determination:</strong> <span class="math display">R^2 = \frac{SS_R}{SS_T} = 1 - \frac{SS_E}{SS_T}</span></p>
+</div>
+</div>
+</section>
+<section id="example-inference-results" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="example-inference-results"><span class="header-section-number">1.2.3</span> Example: Inference Results</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example 6.2: Steel Model Inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Statistical Tests</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Manual Simple Linear Regression Results:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        Parameter Manual_Estimate                               Interpretation
+           &lt;char&gt;           &lt;num&gt;                                       &lt;char&gt;
+1: β₀ (Intercept)         30.4493            Strength when hardness = 0: 30.45
+2:     β₁ (Slope)          2.2370 Strength increases by 2.24 per unit hardness
+3:             σ²         57.8584                        Error variance: 57.86
+4:             R²          0.9349                93.5 % of variation explained</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "R's lm() verification:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = strength ~ hardness, data = steel_data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-11.2758  -5.0561  -0.6948   5.4929  15.1408 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  30.4493     8.7991   3.461  0.00279 ** 
+hardness      2.2370     0.1392  16.074 4.03e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.606 on 18 degrees of freedom
+Multiple R-squared:  0.9349,    Adjusted R-squared:  0.9313 
+F-statistic: 258.4 on 1 and 18 DF,  p-value: 4.031e-12</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Manual vs R Function Comparison:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Parameter    Manual R_Function   Difference
+        &lt;char&gt;     &lt;num&gt;      &lt;num&gt;        &lt;num&gt;
+1:   Intercept 30.449343  30.449343 7.815970e-14
+2:       Slope  2.237023   2.237023 8.881784e-16
+3:   R-squared  0.934870   0.934870 0.000000e+00
+4: Residual SE  7.606471   7.606471 2.664535e-15</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Simple linear regression - manual calculations</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>n <span class="ot">&lt;-</span> <span class="fu">fnobs</span>(steel_data<span class="sc">$</span>hardness)</span>
+<span id="cb19-3"><a href="#cb19-3"></a>x_bar <span class="ot">&lt;-</span> <span class="fu">fmean</span>(steel_data<span class="sc">$</span>hardness)</span>
+<span id="cb19-4"><a href="#cb19-4"></a>y_bar <span class="ot">&lt;-</span> <span class="fu">fmean</span>(steel_data<span class="sc">$</span>strength)</span>
+<span id="cb19-5"><a href="#cb19-5"></a></span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="co"># Calculate sums of squares and cross-products</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a>x <span class="ot">&lt;-</span> steel_data<span class="sc">$</span>hardness</span>
+<span id="cb19-8"><a href="#cb19-8"></a>y <span class="ot">&lt;-</span> steel_data<span class="sc">$</span>strength</span>
+<span id="cb19-9"><a href="#cb19-9"></a></span>
+<span id="cb19-10"><a href="#cb19-10"></a><span class="co"># Manual calculation of sums</span></span>
+<span id="cb19-11"><a href="#cb19-11"></a>Sxx <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> x_bar)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb19-12"><a href="#cb19-12"></a>Syy <span class="ot">&lt;-</span> <span class="fu">sum</span>((y <span class="sc">-</span> y_bar)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb19-13"><a href="#cb19-13"></a>Sxy <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> x_bar) <span class="sc">*</span> (y <span class="sc">-</span> y_bar))</span>
+<span id="cb19-14"><a href="#cb19-14"></a></span>
+<span id="cb19-15"><a href="#cb19-15"></a><span class="co"># Parameter estimates</span></span>
+<span id="cb19-16"><a href="#cb19-16"></a>beta1_hat <span class="ot">&lt;-</span> Sxy <span class="sc">/</span> Sxx</span>
+<span id="cb19-17"><a href="#cb19-17"></a>beta0_hat <span class="ot">&lt;-</span> y_bar <span class="sc">-</span> beta1_hat <span class="sc">*</span> x_bar</span>
+<span id="cb19-18"><a href="#cb19-18"></a></span>
+<span id="cb19-19"><a href="#cb19-19"></a><span class="co"># Sum of squares</span></span>
+<span id="cb19-20"><a href="#cb19-20"></a>SSR <span class="ot">&lt;-</span> beta1_hat <span class="sc">*</span> Sxy <span class="co"># Regression sum of squares</span></span>
+<span id="cb19-21"><a href="#cb19-21"></a>SSE <span class="ot">&lt;-</span> Syy <span class="sc">-</span> beta1_hat <span class="sc">*</span> Sxy <span class="co"># Error sum of squares</span></span>
+<span id="cb19-22"><a href="#cb19-22"></a>SST <span class="ot">&lt;-</span> Syy <span class="co"># Total sum of squares</span></span>
+<span id="cb19-23"><a href="#cb19-23"></a></span>
+<span id="cb19-24"><a href="#cb19-24"></a><span class="co"># Mean squares</span></span>
+<span id="cb19-25"><a href="#cb19-25"></a>MSR <span class="ot">&lt;-</span> SSR <span class="sc">/</span> <span class="dv">1</span> <span class="co"># df = 1 for simple regression</span></span>
+<span id="cb19-26"><a href="#cb19-26"></a>MSE <span class="ot">&lt;-</span> SSE <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">2</span>) <span class="co"># df = n - 2</span></span>
+<span id="cb19-27"><a href="#cb19-27"></a>s_squared <span class="ot">&lt;-</span> MSE</span>
+<span id="cb19-28"><a href="#cb19-28"></a></span>
+<span id="cb19-29"><a href="#cb19-29"></a><span class="co"># R-squared</span></span>
+<span id="cb19-30"><a href="#cb19-30"></a>R_squared <span class="ot">&lt;-</span> SSR <span class="sc">/</span> SST</span>
+<span id="cb19-31"><a href="#cb19-31"></a></span>
+<span id="cb19-32"><a href="#cb19-32"></a><span class="co"># Manual calculations summary</span></span>
+<span id="cb19-33"><a href="#cb19-33"></a>manual_results <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb19-34"><a href="#cb19-34"></a>  <span class="at">Parameter =</span> <span class="fu">c</span>(<span class="st">"β₀ (Intercept)"</span>, <span class="st">"β₁ (Slope)"</span>, <span class="st">"σ²"</span>, <span class="st">"R²"</span>),</span>
+<span id="cb19-35"><a href="#cb19-35"></a>  <span class="at">Manual_Estimate =</span> <span class="fu">c</span>(</span>
+<span id="cb19-36"><a href="#cb19-36"></a>    <span class="fu">round</span>(beta0_hat, <span class="dv">4</span>),</span>
+<span id="cb19-37"><a href="#cb19-37"></a>    <span class="fu">round</span>(beta1_hat, <span class="dv">4</span>),</span>
+<span id="cb19-38"><a href="#cb19-38"></a>    <span class="fu">round</span>(s_squared, <span class="dv">4</span>),</span>
+<span id="cb19-39"><a href="#cb19-39"></a>    <span class="fu">round</span>(R_squared, <span class="dv">4</span>)</span>
+<span id="cb19-40"><a href="#cb19-40"></a>  ),</span>
+<span id="cb19-41"><a href="#cb19-41"></a>  <span class="at">Interpretation =</span> <span class="fu">c</span>(</span>
+<span id="cb19-42"><a href="#cb19-42"></a>    <span class="fu">paste</span>(<span class="st">"Strength when hardness = 0:"</span>, <span class="fu">round</span>(beta0_hat, <span class="dv">2</span>)),</span>
+<span id="cb19-43"><a href="#cb19-43"></a>    <span class="fu">paste</span>(<span class="st">"Strength increases by"</span>, <span class="fu">round</span>(beta1_hat, <span class="dv">2</span>), <span class="st">"per unit hardness"</span>),</span>
+<span id="cb19-44"><a href="#cb19-44"></a>    <span class="fu">paste</span>(<span class="st">"Error variance:"</span>, <span class="fu">round</span>(s_squared, <span class="dv">2</span>)),</span>
+<span id="cb19-45"><a href="#cb19-45"></a>    <span class="fu">paste</span>(<span class="fu">round</span>(R_squared <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">"% of variation explained"</span>)</span>
+<span id="cb19-46"><a href="#cb19-46"></a>  )</span>
+<span id="cb19-47"><a href="#cb19-47"></a>)</span>
+<span id="cb19-48"><a href="#cb19-48"></a></span>
+<span id="cb19-49"><a href="#cb19-49"></a><span class="fu">print</span>(<span class="st">"Manual Simple Linear Regression Results:"</span>)</span>
+<span id="cb19-50"><a href="#cb19-50"></a><span class="fu">print</span>(manual_results)</span>
+<span id="cb19-51"><a href="#cb19-51"></a></span>
+<span id="cb19-52"><a href="#cb19-52"></a><span class="co"># Verification with R's lm function</span></span>
+<span id="cb19-53"><a href="#cb19-53"></a>lm_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(strength <span class="sc">~</span> hardness, <span class="at">data =</span> steel_data)</span>
+<span id="cb19-54"><a href="#cb19-54"></a>lm_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(lm_model)</span>
+<span id="cb19-55"><a href="#cb19-55"></a></span>
+<span id="cb19-56"><a href="#cb19-56"></a><span class="fu">print</span>(<span class="st">"R's lm() verification:"</span>)</span>
+<span id="cb19-57"><a href="#cb19-57"></a><span class="fu">print</span>(lm_summary)</span>
+<span id="cb19-58"><a href="#cb19-58"></a></span>
+<span id="cb19-59"><a href="#cb19-59"></a><span class="co"># Compare manual vs R calculations</span></span>
+<span id="cb19-60"><a href="#cb19-60"></a>comparison <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb19-61"><a href="#cb19-61"></a>  <span class="at">Parameter =</span> <span class="fu">c</span>(<span class="st">"Intercept"</span>, <span class="st">"Slope"</span>, <span class="st">"R-squared"</span>, <span class="st">"Residual SE"</span>),</span>
+<span id="cb19-62"><a href="#cb19-62"></a>  <span class="at">Manual =</span> <span class="fu">c</span>(beta0_hat, beta1_hat, R_squared, <span class="fu">sqrt</span>(MSE)),</span>
+<span id="cb19-63"><a href="#cb19-63"></a>  <span class="at">R_Function =</span> <span class="fu">c</span>(</span>
+<span id="cb19-64"><a href="#cb19-64"></a>    <span class="fu">coef</span>(lm_model)[<span class="dv">1</span>], <span class="fu">coef</span>(lm_model)[<span class="dv">2</span>],</span>
+<span id="cb19-65"><a href="#cb19-65"></a>    <span class="fu">summary</span>(lm_model)<span class="sc">$</span>r.squared, <span class="fu">summary</span>(lm_model)<span class="sc">$</span>sigma</span>
+<span id="cb19-66"><a href="#cb19-66"></a>  ),</span>
+<span id="cb19-67"><a href="#cb19-67"></a>  <span class="at">Difference =</span> <span class="fu">c</span>(</span>
+<span id="cb19-68"><a href="#cb19-68"></a>    <span class="fu">abs</span>(beta0_hat <span class="sc">-</span> <span class="fu">coef</span>(lm_model)[<span class="dv">1</span>]),</span>
+<span id="cb19-69"><a href="#cb19-69"></a>    <span class="fu">abs</span>(beta1_hat <span class="sc">-</span> <span class="fu">coef</span>(lm_model)[<span class="dv">2</span>]),</span>
+<span id="cb19-70"><a href="#cb19-70"></a>    <span class="fu">abs</span>(R_squared <span class="sc">-</span> <span class="fu">summary</span>(lm_model)<span class="sc">$</span>r.squared),</span>
+<span id="cb19-71"><a href="#cb19-71"></a>    <span class="fu">abs</span>(<span class="fu">sqrt</span>(MSE) <span class="sc">-</span> <span class="fu">summary</span>(lm_model)<span class="sc">$</span>sigma)</span>
+<span id="cb19-72"><a href="#cb19-72"></a>  )</span>
+<span id="cb19-73"><a href="#cb19-73"></a>)</span>
+<span id="cb19-74"><a href="#cb19-74"></a></span>
+<span id="cb19-75"><a href="#cb19-75"></a><span class="fu">print</span>(<span class="st">"Manual vs R Function Comparison:"</span>)</span>
+<span id="cb19-76"><a href="#cb19-76"></a><span class="fu">print</span>(comparison)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Intervals</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hypothesis Test Results:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   Test Null_Hypothesis Test_Statistic P_Value Critical_Value
+                 &lt;char&gt;          &lt;char&gt;          &lt;num&gt;   &lt;num&gt;          &lt;num&gt;
+1:         Slope β₁ = 0          β₁ = 0        16.0739  0.0000          2.101
+2:     Intercept β₀ = 0          β₀ = 0         3.4605  0.0028          2.101
+3: Overall Model F-test          β₁ = 0       258.3704  0.0000          4.414
+    Decision                               Conclusion
+      &lt;char&gt;                                   &lt;char&gt;
+1: Reject H₀          Significant linear relationship
+2: Reject H₀ Intercept significantly different from 0
+3: Reject H₀                     Model is significant</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ANOVA Table:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Source       SS    df       MS F_Statistic P_Value
+       &lt;char&gt;    &lt;num&gt; &lt;num&gt;    &lt;num&gt;       &lt;num&gt;   &lt;num&gt;
+1: Regression 14948.90     1 14948.90    258.3704       0
+2:      Error  1041.45    18    57.86          NA      NA
+3:      Total 15990.35    19       NA          NA      NA</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Hypothesis testing for regression parameters</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>df_error <span class="ot">&lt;-</span> n <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>t_critical <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>, df_error)</span>
+<span id="cb24-5"><a href="#cb24-5"></a></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="co"># Standard errors</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>SE_beta1 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE <span class="sc">/</span> Sxx)</span>
+<span id="cb24-8"><a href="#cb24-8"></a>SE_beta0 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> n <span class="sc">+</span> x_bar<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> Sxx))</span>
+<span id="cb24-9"><a href="#cb24-9"></a></span>
+<span id="cb24-10"><a href="#cb24-10"></a><span class="co"># Test for slope (β₁ = 0)</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a>t_stat_beta1 <span class="ot">&lt;-</span> beta1_hat <span class="sc">/</span> SE_beta1</span>
+<span id="cb24-12"><a href="#cb24-12"></a>p_value_beta1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t_stat_beta1), df_error))</span>
+<span id="cb24-13"><a href="#cb24-13"></a></span>
+<span id="cb24-14"><a href="#cb24-14"></a><span class="co"># Test for intercept (β₀ = 0)</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a>t_stat_beta0 <span class="ot">&lt;-</span> beta0_hat <span class="sc">/</span> SE_beta0</span>
+<span id="cb24-16"><a href="#cb24-16"></a>p_value_beta0 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t_stat_beta0), df_error))</span>
+<span id="cb24-17"><a href="#cb24-17"></a></span>
+<span id="cb24-18"><a href="#cb24-18"></a><span class="co"># F-test for overall significance</span></span>
+<span id="cb24-19"><a href="#cb24-19"></a>F_stat <span class="ot">&lt;-</span> MSR <span class="sc">/</span> MSE</span>
+<span id="cb24-20"><a href="#cb24-20"></a>p_value_F <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pf</span>(F_stat, <span class="dv">1</span>, df_error)</span>
+<span id="cb24-21"><a href="#cb24-21"></a></span>
+<span id="cb24-22"><a href="#cb24-22"></a><span class="co"># Hypothesis test results</span></span>
+<span id="cb24-23"><a href="#cb24-23"></a>hypothesis_tests <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb24-24"><a href="#cb24-24"></a>  <span class="at">Test =</span> <span class="fu">c</span>(<span class="st">"Slope β₁ = 0"</span>, <span class="st">"Intercept β₀ = 0"</span>, <span class="st">"Overall Model F-test"</span>),</span>
+<span id="cb24-25"><a href="#cb24-25"></a>  <span class="at">Null_Hypothesis =</span> <span class="fu">c</span>(<span class="st">"β₁ = 0"</span>, <span class="st">"β₀ = 0"</span>, <span class="st">"β₁ = 0"</span>),</span>
+<span id="cb24-26"><a href="#cb24-26"></a>  <span class="at">Test_Statistic =</span> <span class="fu">c</span>(<span class="fu">round</span>(t_stat_beta1, <span class="dv">4</span>), <span class="fu">round</span>(t_stat_beta0, <span class="dv">4</span>), <span class="fu">round</span>(F_stat, <span class="dv">4</span>)),</span>
+<span id="cb24-27"><a href="#cb24-27"></a>  <span class="at">P_Value =</span> <span class="fu">c</span>(<span class="fu">round</span>(p_value_beta1, <span class="dv">4</span>), <span class="fu">round</span>(p_value_beta0, <span class="dv">4</span>), <span class="fu">round</span>(p_value_F, <span class="dv">4</span>)),</span>
+<span id="cb24-28"><a href="#cb24-28"></a>  <span class="at">Critical_Value =</span> <span class="fu">c</span>(</span>
+<span id="cb24-29"><a href="#cb24-29"></a>    <span class="fu">round</span>(t_critical, <span class="dv">3</span>), <span class="fu">round</span>(t_critical, <span class="dv">3</span>),</span>
+<span id="cb24-30"><a href="#cb24-30"></a>    <span class="fu">round</span>(<span class="fu">qf</span>(<span class="dv">1</span> <span class="sc">-</span> alpha, <span class="dv">1</span>, df_error), <span class="dv">3</span>)</span>
+<span id="cb24-31"><a href="#cb24-31"></a>  ),</span>
+<span id="cb24-32"><a href="#cb24-32"></a>  <span class="at">Decision =</span> <span class="fu">c</span>(</span>
+<span id="cb24-33"><a href="#cb24-33"></a>    <span class="fu">ifelse</span>(p_value_beta1 <span class="sc">&lt;</span> alpha, <span class="st">"Reject H₀"</span>, <span class="st">"Fail to reject H₀"</span>),</span>
+<span id="cb24-34"><a href="#cb24-34"></a>    <span class="fu">ifelse</span>(p_value_beta0 <span class="sc">&lt;</span> alpha, <span class="st">"Reject H₀"</span>, <span class="st">"Fail to reject H₀"</span>),</span>
+<span id="cb24-35"><a href="#cb24-35"></a>    <span class="fu">ifelse</span>(p_value_F <span class="sc">&lt;</span> alpha, <span class="st">"Reject H₀"</span>, <span class="st">"Fail to reject H₀"</span>)</span>
+<span id="cb24-36"><a href="#cb24-36"></a>  ),</span>
+<span id="cb24-37"><a href="#cb24-37"></a>  <span class="at">Conclusion =</span> <span class="fu">c</span>(</span>
+<span id="cb24-38"><a href="#cb24-38"></a>    <span class="fu">ifelse</span>(p_value_beta1 <span class="sc">&lt;</span> alpha, <span class="st">"Significant linear relationship"</span>, <span class="st">"No significant relationship"</span>),</span>
+<span id="cb24-39"><a href="#cb24-39"></a>    <span class="fu">ifelse</span>(p_value_beta0 <span class="sc">&lt;</span> alpha, <span class="st">"Intercept significantly different from 0"</span>, <span class="st">"Intercept not significant"</span>),</span>
+<span id="cb24-40"><a href="#cb24-40"></a>    <span class="fu">ifelse</span>(p_value_F <span class="sc">&lt;</span> alpha, <span class="st">"Model is significant"</span>, <span class="st">"Model is not significant"</span>)</span>
+<span id="cb24-41"><a href="#cb24-41"></a>  )</span>
+<span id="cb24-42"><a href="#cb24-42"></a>)</span>
+<span id="cb24-43"><a href="#cb24-43"></a></span>
+<span id="cb24-44"><a href="#cb24-44"></a><span class="fu">print</span>(<span class="st">"Hypothesis Test Results:"</span>)</span>
+<span id="cb24-45"><a href="#cb24-45"></a><span class="fu">print</span>(hypothesis_tests)</span>
+<span id="cb24-46"><a href="#cb24-46"></a></span>
+<span id="cb24-47"><a href="#cb24-47"></a><span class="co"># ANOVA table</span></span>
+<span id="cb24-48"><a href="#cb24-48"></a>anova_table <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb24-49"><a href="#cb24-49"></a>  <span class="at">Source =</span> <span class="fu">c</span>(<span class="st">"Regression"</span>, <span class="st">"Error"</span>, <span class="st">"Total"</span>),</span>
+<span id="cb24-50"><a href="#cb24-50"></a>  <span class="at">SS =</span> <span class="fu">c</span>(<span class="fu">round</span>(SSR, <span class="dv">2</span>), <span class="fu">round</span>(SSE, <span class="dv">2</span>), <span class="fu">round</span>(SST, <span class="dv">2</span>)),</span>
+<span id="cb24-51"><a href="#cb24-51"></a>  <span class="at">df =</span> <span class="fu">c</span>(<span class="dv">1</span>, df_error, n <span class="sc">-</span> <span class="dv">1</span>),</span>
+<span id="cb24-52"><a href="#cb24-52"></a>  <span class="at">MS =</span> <span class="fu">c</span>(<span class="fu">round</span>(MSR, <span class="dv">2</span>), <span class="fu">round</span>(MSE, <span class="dv">2</span>), <span class="cn">NA</span>),</span>
+<span id="cb24-53"><a href="#cb24-53"></a>  <span class="at">F_Statistic =</span> <span class="fu">c</span>(<span class="fu">round</span>(F_stat, <span class="dv">4</span>), <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb24-54"><a href="#cb24-54"></a>  <span class="at">P_Value =</span> <span class="fu">c</span>(<span class="fu">round</span>(p_value_F, <span class="dv">4</span>), <span class="cn">NA</span>, <span class="cn">NA</span>)</span>
+<span id="cb24-55"><a href="#cb24-55"></a>)</span>
+<span id="cb24-56"><a href="#cb24-56"></a></span>
+<span id="cb24-57"><a href="#cb24-57"></a><span class="fu">print</span>(<span class="st">"ANOVA Table:"</span>)</span>
+<span id="cb24-58"><a href="#cb24-58"></a><span class="fu">print</span>(anova_table)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="model-adequacy" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="model-adequacy"><span class="header-section-number">1.3</span> Model Adequacy</h2>
+<section id="residual-analysis" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="residual-analysis"><span class="header-section-number">1.3.1</span> Residual Analysis</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Diagnostic Procedures
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key Plots:</strong> - Residuals vs Fitted Values - Normal Q-Q Plot<br>
+- Scale-Location Plot - Residuals vs Order</p>
+<p><strong>Tests:</strong> - Shapiro-Wilk (normality) - Durbin-Watson (independence)</p>
+</div>
+</div>
+</section>
+<section id="example-model-diagnostics" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="example-model-diagnostics"><span class="header-section-number">1.3.2</span> Example: Model Diagnostics</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example 6.3: Residual Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Diagnostics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "95% Confidence Intervals for Mean Response:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Hardness Predicted CI_Lower CI_Upper CI_Width
+      &lt;num&gt;     &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;
+1: 41.68238    123.69   116.75   130.63    13.88
+2: 50.83012    144.16   139.31   149.00     9.69
+3: 59.97786    164.62   161.00   168.24     7.25
+4: 69.12560    185.08   180.95   189.22     8.26
+5: 78.27333    205.55   199.61   211.49    11.89</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "95% Prediction Intervals for Individual Observations:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Hardness Predicted PI_Lower PI_Upper PI_Width
+      &lt;num&gt;     &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;
+1: 41.68238    123.69   106.27   141.12    34.85
+2: 50.83012    144.16   127.46   160.86    33.40
+3: 59.97786    164.62   148.23   181.01    32.77
+4: 69.12560    185.08   168.58   201.59    33.01
+5: 78.27333    205.55   188.50   222.60    34.10</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Interval Width Comparison:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Hardness CI_Width PI_Width PI_vs_CI_Ratio
+      &lt;num&gt;    &lt;num&gt;    &lt;num&gt;          &lt;num&gt;
+1: 41.68238    13.88    34.85           2.51
+2: 50.83012     9.69    33.40           3.45
+3: 59.97786     7.25    32.77           4.52
+4: 69.12560     8.26    33.01           4.00
+5: 78.27333    11.89    34.10           2.87</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Confidence and prediction intervals</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="co"># Choose some specific x values for demonstration</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>x_new <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">fmin</span>(steel_data<span class="sc">$</span>hardness), <span class="fu">fmax</span>(steel_data<span class="sc">$</span>hardness), <span class="at">length.out =</span> <span class="dv">5</span>)</span>
+<span id="cb31-4"><a href="#cb31-4"></a></span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="co"># Confidence intervals for mean response</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>CI_results <span class="ot">&lt;-</span> <span class="fu">data.table</span>()</span>
+<span id="cb31-7"><a href="#cb31-7"></a>PI_results <span class="ot">&lt;-</span> <span class="fu">data.table</span>()</span>
+<span id="cb31-8"><a href="#cb31-8"></a></span>
+<span id="cb31-9"><a href="#cb31-9"></a><span class="cf">for</span> (x0 <span class="cf">in</span> x_new) {</span>
+<span id="cb31-10"><a href="#cb31-10"></a>  <span class="co"># Predicted value</span></span>
+<span id="cb31-11"><a href="#cb31-11"></a>  y_hat <span class="ot">&lt;-</span> beta0_hat <span class="sc">+</span> beta1_hat <span class="sc">*</span> x0</span>
+<span id="cb31-12"><a href="#cb31-12"></a></span>
+<span id="cb31-13"><a href="#cb31-13"></a>  <span class="co"># Confidence interval for mean response</span></span>
+<span id="cb31-14"><a href="#cb31-14"></a>  SE_mean <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> n <span class="sc">+</span> (x0 <span class="sc">-</span> x_bar)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> Sxx))</span>
+<span id="cb31-15"><a href="#cb31-15"></a>  margin_CI <span class="ot">&lt;-</span> t_critical <span class="sc">*</span> SE_mean</span>
+<span id="cb31-16"><a href="#cb31-16"></a>  CI_lower <span class="ot">&lt;-</span> y_hat <span class="sc">-</span> margin_CI</span>
+<span id="cb31-17"><a href="#cb31-17"></a>  CI_upper <span class="ot">&lt;-</span> y_hat <span class="sc">+</span> margin_CI</span>
+<span id="cb31-18"><a href="#cb31-18"></a></span>
+<span id="cb31-19"><a href="#cb31-19"></a>  <span class="co"># Prediction interval for individual observation</span></span>
+<span id="cb31-20"><a href="#cb31-20"></a>  SE_pred <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="sc">/</span> n <span class="sc">+</span> (x0 <span class="sc">-</span> x_bar)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> Sxx))</span>
+<span id="cb31-21"><a href="#cb31-21"></a>  margin_PI <span class="ot">&lt;-</span> t_critical <span class="sc">*</span> SE_pred</span>
+<span id="cb31-22"><a href="#cb31-22"></a>  PI_lower <span class="ot">&lt;-</span> y_hat <span class="sc">-</span> margin_PI</span>
+<span id="cb31-23"><a href="#cb31-23"></a>  PI_upper <span class="ot">&lt;-</span> y_hat <span class="sc">+</span> margin_PI</span>
+<span id="cb31-24"><a href="#cb31-24"></a></span>
+<span id="cb31-25"><a href="#cb31-25"></a>  CI_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(CI_results, <span class="fu">data.table</span>(</span>
+<span id="cb31-26"><a href="#cb31-26"></a>    <span class="at">Hardness =</span> x0,</span>
+<span id="cb31-27"><a href="#cb31-27"></a>    <span class="at">Predicted =</span> <span class="fu">round</span>(y_hat, <span class="dv">2</span>),</span>
+<span id="cb31-28"><a href="#cb31-28"></a>    <span class="at">CI_Lower =</span> <span class="fu">round</span>(CI_lower, <span class="dv">2</span>),</span>
+<span id="cb31-29"><a href="#cb31-29"></a>    <span class="at">CI_Upper =</span> <span class="fu">round</span>(CI_upper, <span class="dv">2</span>),</span>
+<span id="cb31-30"><a href="#cb31-30"></a>    <span class="at">CI_Width =</span> <span class="fu">round</span>(CI_upper <span class="sc">-</span> CI_lower, <span class="dv">2</span>)</span>
+<span id="cb31-31"><a href="#cb31-31"></a>  ))</span>
+<span id="cb31-32"><a href="#cb31-32"></a></span>
+<span id="cb31-33"><a href="#cb31-33"></a>  PI_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(PI_results, <span class="fu">data.table</span>(</span>
+<span id="cb31-34"><a href="#cb31-34"></a>    <span class="at">Hardness =</span> x0,</span>
+<span id="cb31-35"><a href="#cb31-35"></a>    <span class="at">Predicted =</span> <span class="fu">round</span>(y_hat, <span class="dv">2</span>),</span>
+<span id="cb31-36"><a href="#cb31-36"></a>    <span class="at">PI_Lower =</span> <span class="fu">round</span>(PI_lower, <span class="dv">2</span>),</span>
+<span id="cb31-37"><a href="#cb31-37"></a>    <span class="at">PI_Upper =</span> <span class="fu">round</span>(PI_upper, <span class="dv">2</span>),</span>
+<span id="cb31-38"><a href="#cb31-38"></a>    <span class="at">PI_Width =</span> <span class="fu">round</span>(PI_upper <span class="sc">-</span> PI_lower, <span class="dv">2</span>)</span>
+<span id="cb31-39"><a href="#cb31-39"></a>  ))</span>
+<span id="cb31-40"><a href="#cb31-40"></a>}</span>
+<span id="cb31-41"><a href="#cb31-41"></a></span>
+<span id="cb31-42"><a href="#cb31-42"></a><span class="fu">print</span>(<span class="st">"95% Confidence Intervals for Mean Response:"</span>)</span>
+<span id="cb31-43"><a href="#cb31-43"></a><span class="fu">print</span>(CI_results)</span>
+<span id="cb31-44"><a href="#cb31-44"></a></span>
+<span id="cb31-45"><a href="#cb31-45"></a><span class="fu">print</span>(<span class="st">"95% Prediction Intervals for Individual Observations:"</span>)</span>
+<span id="cb31-46"><a href="#cb31-46"></a><span class="fu">print</span>(PI_results)</span>
+<span id="cb31-47"><a href="#cb31-47"></a></span>
+<span id="cb31-48"><a href="#cb31-48"></a><span class="co"># Compare CI and PI widths</span></span>
+<span id="cb31-49"><a href="#cb31-49"></a>interval_comparison <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb31-50"><a href="#cb31-50"></a>  <span class="at">Hardness =</span> x_new,</span>
+<span id="cb31-51"><a href="#cb31-51"></a>  <span class="at">CI_Width =</span> CI_results<span class="sc">$</span>CI_Width,</span>
+<span id="cb31-52"><a href="#cb31-52"></a>  <span class="at">PI_Width =</span> PI_results<span class="sc">$</span>PI_Width,</span>
+<span id="cb31-53"><a href="#cb31-53"></a>  <span class="at">PI_vs_CI_Ratio =</span> <span class="fu">round</span>(PI_results<span class="sc">$</span>PI_Width <span class="sc">/</span> CI_results<span class="sc">$</span>CI_Width, <span class="dv">2</span>)</span>
+<span id="cb31-54"><a href="#cb31-54"></a>)</span>
+<span id="cb31-55"><a href="#cb31-55"></a></span>
+<span id="cb31-56"><a href="#cb31-56"></a><span class="fu">print</span>(<span class="st">"Interval Width Comparison:"</span>)</span>
+<span id="cb31-57"><a href="#cb31-57"></a><span class="fu">print</span>(interval_comparison)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Plots</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-Ch06Code02" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch06Code02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch061_files/figure-html/fig-Ch06Code02-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1: Model diagnostic plots"><img src="Ch061_files/figure-html/fig-Ch06Code02-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch06Code02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Model diagnostic plots
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Confidence and prediction intervals visualization</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="co"># Create fine grid for smooth curves</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>x_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">fmin</span>(steel_data<span class="sc">$</span>hardness), <span class="fu">fmax</span>(steel_data<span class="sc">$</span>hardness), <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb32-4"><a href="#cb32-4"></a>interval_data <span class="ot">&lt;-</span> <span class="fu">data.table</span>()</span>
+<span id="cb32-5"><a href="#cb32-5"></a></span>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="cf">for</span> (x0 <span class="cf">in</span> x_grid) {</span>
+<span id="cb32-7"><a href="#cb32-7"></a>  y_hat <span class="ot">&lt;-</span> beta0_hat <span class="sc">+</span> beta1_hat <span class="sc">*</span> x0</span>
+<span id="cb32-8"><a href="#cb32-8"></a></span>
+<span id="cb32-9"><a href="#cb32-9"></a>  <span class="co"># Confidence interval</span></span>
+<span id="cb32-10"><a href="#cb32-10"></a>  SE_mean <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> n <span class="sc">+</span> (x0 <span class="sc">-</span> x_bar)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> Sxx))</span>
+<span id="cb32-11"><a href="#cb32-11"></a>  CI_lower <span class="ot">&lt;-</span> y_hat <span class="sc">-</span> t_critical <span class="sc">*</span> SE_mean</span>
+<span id="cb32-12"><a href="#cb32-12"></a>  CI_upper <span class="ot">&lt;-</span> y_hat <span class="sc">+</span> t_critical <span class="sc">*</span> SE_mean</span>
+<span id="cb32-13"><a href="#cb32-13"></a></span>
+<span id="cb32-14"><a href="#cb32-14"></a>  <span class="co"># Prediction interval</span></span>
+<span id="cb32-15"><a href="#cb32-15"></a>  SE_pred <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="sc">/</span> n <span class="sc">+</span> (x0 <span class="sc">-</span> x_bar)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> Sxx))</span>
+<span id="cb32-16"><a href="#cb32-16"></a>  PI_lower <span class="ot">&lt;-</span> y_hat <span class="sc">-</span> t_critical <span class="sc">*</span> SE_pred</span>
+<span id="cb32-17"><a href="#cb32-17"></a>  PI_upper <span class="ot">&lt;-</span> y_hat <span class="sc">+</span> t_critical <span class="sc">*</span> SE_pred</span>
+<span id="cb32-18"><a href="#cb32-18"></a></span>
+<span id="cb32-19"><a href="#cb32-19"></a>  interval_data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(interval_data, <span class="fu">data.table</span>(</span>
+<span id="cb32-20"><a href="#cb32-20"></a>    <span class="at">hardness =</span> x0,</span>
+<span id="cb32-21"><a href="#cb32-21"></a>    <span class="at">fitted =</span> y_hat,</span>
+<span id="cb32-22"><a href="#cb32-22"></a>    <span class="at">CI_lower =</span> CI_lower,</span>
+<span id="cb32-23"><a href="#cb32-23"></a>    <span class="at">CI_upper =</span> CI_upper,</span>
+<span id="cb32-24"><a href="#cb32-24"></a>    <span class="at">PI_lower =</span> PI_lower,</span>
+<span id="cb32-25"><a href="#cb32-25"></a>    <span class="at">PI_upper =</span> PI_upper</span>
+<span id="cb32-26"><a href="#cb32-26"></a>  ))</span>
+<span id="cb32-27"><a href="#cb32-27"></a>}</span>
+<span id="cb32-28"><a href="#cb32-28"></a></span>
+<span id="cb32-29"><a href="#cb32-29"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb32-30"><a href="#cb32-30"></a>  <span class="co"># Prediction intervals (wider, lighter)</span></span>
+<span id="cb32-31"><a href="#cb32-31"></a>  <span class="fu">geom_ribbon</span>(</span>
+<span id="cb32-32"><a href="#cb32-32"></a>    <span class="at">data =</span> interval_data, <span class="fu">aes</span>(<span class="at">x =</span> hardness, <span class="at">ymin =</span> PI_lower, <span class="at">ymax =</span> PI_upper),</span>
+<span id="cb32-33"><a href="#cb32-33"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">"red"</span></span>
+<span id="cb32-34"><a href="#cb32-34"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-35"><a href="#cb32-35"></a>  <span class="co"># Confidence intervals (narrower, darker)</span></span>
+<span id="cb32-36"><a href="#cb32-36"></a>  <span class="fu">geom_ribbon</span>(</span>
+<span id="cb32-37"><a href="#cb32-37"></a>    <span class="at">data =</span> interval_data, <span class="fu">aes</span>(<span class="at">x =</span> hardness, <span class="at">ymin =</span> CI_lower, <span class="at">ymax =</span> CI_upper),</span>
+<span id="cb32-38"><a href="#cb32-38"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">fill =</span> <span class="st">"blue"</span></span>
+<span id="cb32-39"><a href="#cb32-39"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-40"><a href="#cb32-40"></a>  <span class="co"># Regression line</span></span>
+<span id="cb32-41"><a href="#cb32-41"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> interval_data, <span class="fu">aes</span>(<span class="at">x =</span> hardness, <span class="at">y =</span> fitted), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb32-42"><a href="#cb32-42"></a>  <span class="co"># Data points</span></span>
+<span id="cb32-43"><a href="#cb32-43"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> steel_data, <span class="fu">aes</span>(<span class="at">x =</span> hardness, <span class="at">y =</span> strength), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb32-44"><a href="#cb32-44"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-45"><a href="#cb32-45"></a>    <span class="at">x =</span> <span class="st">"Hardness"</span>,</span>
+<span id="cb32-46"><a href="#cb32-46"></a>    <span class="at">y =</span> <span class="st">"Tensile Strength"</span>,</span>
+<span id="cb32-47"><a href="#cb32-47"></a>    <span class="at">title =</span> <span class="st">"Confidence and Prediction Intervals"</span>,</span>
+<span id="cb32-48"><a href="#cb32-48"></a>    <span class="at">subtitle =</span> <span class="st">"Blue = 95% CI for mean response, Red = 95% PI for individual observations"</span></span>
+<span id="cb32-49"><a href="#cb32-49"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-50"><a href="#cb32-50"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb32-51"><a href="#cb32-51"></a>  <span class="fu">theme</span>(</span>
+<span id="cb32-52"><a href="#cb32-52"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb32-53"><a href="#cb32-53"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb32-54"><a href="#cb32-54"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="correlation-analysis" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="correlation-analysis"><span class="header-section-number">1.4</span> Correlation Analysis</h2>
+<section id="correlation-coefficient" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="correlation-coefficient"><span class="header-section-number">1.4.1</span> Correlation Coefficient</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Sample Correlation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n (y_i - \bar{y})^2}}</span></p>
+<p><strong>Properties:</strong> - <span class="math inline">-1 \leq r \leq 1</span> - <span class="math inline">r^2 = R^2</span> (simple regression) - Scale invariant</p>
+<p><strong>Test for Significance:</strong> <span class="math display">t = \frac{r}{\sqrt{\frac{1-r^2}{n-2}}} \sim t_{n-2}</span></p>
+</div>
+</div>
+</section>
+<section id="example-correlation-analysis" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="example-correlation-analysis"><span class="header-section-number">1.4.2</span> Example: Correlation Analysis</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example 6.4: Steel Data Correlation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Correlation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'fitted_values' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'residuals_data' not found</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Residual Analysis Summary:"</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'residual_summary' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'residuals_data' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'outliers' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in shapiro.test(residuals): is.numeric(x) is not TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Shapiro-Wilk normality test for residuals:"</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'shapiro_test' not found</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in x[0L]: object of type 'closure' is not subsettable</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'dw_stat' not found</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "(Values near 2 indicate no autocorrelation)"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Model adequacy checking - residual analysis</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="co"># Calculate residuals and standardized residuals</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>residuals_data <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb45-4"><a href="#cb45-4"></a>  <span class="at">fitted =</span> fitted_values,</span>
+<span id="cb45-5"><a href="#cb45-5"></a>  <span class="at">residuals =</span> residuals,</span>
+<span id="cb45-6"><a href="#cb45-6"></a>  <span class="at">standardized_residuals =</span> residuals <span class="sc">/</span> <span class="fu">sqrt</span>(MSE),</span>
+<span id="cb45-7"><a href="#cb45-7"></a>  <span class="at">observation =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
+<span id="cb45-8"><a href="#cb45-8"></a>  <span class="at">hardness =</span> steel_data<span class="sc">$</span>hardness</span>
+<span id="cb45-9"><a href="#cb45-9"></a>)</span>
+<span id="cb45-10"><a href="#cb45-10"></a></span>
+<span id="cb45-11"><a href="#cb45-11"></a><span class="co"># Summary statistics for residuals</span></span>
+<span id="cb45-12"><a href="#cb45-12"></a>residual_summary <span class="ot">&lt;-</span> residuals_data <span class="sc">%&gt;%</span></span>
+<span id="cb45-13"><a href="#cb45-13"></a>  <span class="fu">fsummarise</span>(</span>
+<span id="cb45-14"><a href="#cb45-14"></a>    <span class="at">Mean_Residuals =</span> <span class="fu">fmean</span>(residuals),</span>
+<span id="cb45-15"><a href="#cb45-15"></a>    <span class="at">SD_Residuals =</span> <span class="fu">fsd</span>(residuals),</span>
+<span id="cb45-16"><a href="#cb45-16"></a>    <span class="at">Min_Residuals =</span> <span class="fu">fmin</span>(residuals),</span>
+<span id="cb45-17"><a href="#cb45-17"></a>    <span class="at">Max_Residuals =</span> <span class="fu">fmax</span>(residuals),</span>
+<span id="cb45-18"><a href="#cb45-18"></a>    <span class="at">Mean_Std_Residuals =</span> <span class="fu">fmean</span>(standardized_residuals),</span>
+<span id="cb45-19"><a href="#cb45-19"></a>    <span class="at">SD_Std_Residuals =</span> <span class="fu">fsd</span>(standardized_residuals)</span>
+<span id="cb45-20"><a href="#cb45-20"></a>  )</span>
+<span id="cb45-21"><a href="#cb45-21"></a></span>
+<span id="cb45-22"><a href="#cb45-22"></a><span class="fu">print</span>(<span class="st">"Residual Analysis Summary:"</span>)</span>
+<span id="cb45-23"><a href="#cb45-23"></a><span class="fu">print</span>(residual_summary)</span>
+<span id="cb45-24"><a href="#cb45-24"></a></span>
+<span id="cb45-25"><a href="#cb45-25"></a><span class="co"># Check for outliers (|standardized residual| &gt; 2)</span></span>
+<span id="cb45-26"><a href="#cb45-26"></a>outliers <span class="ot">&lt;-</span> residuals_data[<span class="fu">abs</span>(standardized_residuals) <span class="sc">&gt;</span> <span class="dv">2</span>]</span>
+<span id="cb45-27"><a href="#cb45-27"></a><span class="cf">if</span> (<span class="fu">nrow</span>(outliers) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb45-28"><a href="#cb45-28"></a>  <span class="fu">print</span>(<span class="st">"Potential outliers (|std residual| &gt; 2):"</span>)</span>
+<span id="cb45-29"><a href="#cb45-29"></a>  <span class="fu">print</span>(outliers)</span>
+<span id="cb45-30"><a href="#cb45-30"></a>} <span class="cf">else</span> {</span>
+<span id="cb45-31"><a href="#cb45-31"></a>  <span class="fu">print</span>(<span class="st">"No obvious outliers detected (|std residual| &gt; 2)"</span>)</span>
+<span id="cb45-32"><a href="#cb45-32"></a>}</span>
+<span id="cb45-33"><a href="#cb45-33"></a></span>
+<span id="cb45-34"><a href="#cb45-34"></a><span class="co"># Normality test for residuals</span></span>
+<span id="cb45-35"><a href="#cb45-35"></a>shapiro_test <span class="ot">&lt;-</span> <span class="fu">shapiro.test</span>(residuals)</span>
+<span id="cb45-36"><a href="#cb45-36"></a><span class="fu">print</span>(<span class="st">"Shapiro-Wilk normality test for residuals:"</span>)</span>
+<span id="cb45-37"><a href="#cb45-37"></a><span class="fu">print</span>(shapiro_test)</span>
+<span id="cb45-38"><a href="#cb45-38"></a></span>
+<span id="cb45-39"><a href="#cb45-39"></a><span class="co"># Durbin-Watson test for independence (if data has natural order)</span></span>
+<span id="cb45-40"><a href="#cb45-40"></a>dw_stat <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">diff</span>(residuals)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">sum</span>(residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb45-41"><a href="#cb45-41"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Durbin-Watson statistic:"</span>, <span class="fu">round</span>(dw_stat, <span class="dv">4</span>)))</span>
+<span id="cb45-42"><a href="#cb45-42"></a><span class="fu">print</span>(<span class="st">"(Values near 2 indicate no autocorrelation)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="summary" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.5</span> Summary</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Key Engineering Applications
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Simple Linear Regression:</strong> - Process optimization - Quality control - Predictive modeling</p>
+<p><strong>Correlation Analysis:</strong><br>
+- Variable screening - Relationship assessment - Data exploration</p>
+<p><strong>Model Validation:</strong> - Assumption checking - Outlier detection - Prediction accuracy</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Muhammad Yaseen. Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p><strong>Math-3020: Statistics for Science &amp; Engineering</strong></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/MYaseen208">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/MYaseen208">
+      <i class="bi bi-twitter" role="img" aria-label="Twitter">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/muhammad-yaseen-247800b4/">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"bottom","loop":false,"openEffect":"fade","selector":".lightbox","skin":"lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

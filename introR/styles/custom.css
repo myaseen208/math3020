@@ -1,0 +1,28 @@
+/* Custom CSS for R code formatting */
+pre {
+  background-color: #f6f8fa !important;
+  border: 1px solid #d0d7de !important;
+  border-radius: 6px !important;
+  padding: 16px !important;
+  margin: 16px 0 !important;
+  overflow-x: auto !important;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+.cell-output pre {
+  background-color: #fff !important;
+  border-left: 4px solid #F56600 !important;
+  border-radius: 0 6px 6px 0 !important;
+}
+
+h1 { 
+  color: #522D80 !important; 
+  border-bottom: 2px solid #F56600 !important;
+  padding-bottom: 0.5rem !important;
+}
+
+h2, h3 { 
+  color: #522D80 !important; 
+}

@@ -1,0 +1,66 @@
+# Creating reference-doc.docx for Clemson Branding
+
+## Steps to Create the Reference Document:
+
+1. **Create a new Word document** and save it as `styles/reference-doc.docx`
+
+2. **Set up the following styles with Clemson colors:**
+
+### Font Settings:
+- **Body Text**: Times New Roman, 11pt, Black
+- **Headings**: Times New Roman, Bold
+
+### Color Scheme:
+- **Clemson Orange**: RGB(245, 102, 0) or #F56600
+- **Clemson Regalia**: RGB(82, 45, 128) or #522D80
+
+### Style Definitions:
+
+**Normal Style:**
+- Font: Times New Roman, 11pt
+- Line spacing: 1.15
+- Justify alignment
+
+**Heading 1:**
+- Font: Times New Roman, 16pt, Bold
+- Color: Clemson Regalia (#522D80)
+- Space before: 24pt, after: 12pt
+- Border bottom: 2pt, Clemson Orange
+
+**Heading 2:**
+- Font: Times New Roman, 14pt, Bold  
+- Color: Clemson Regalia (#522D80)
+- Space before: 18pt, after: 9pt
+- Left border: 3pt, Clemson Orange, 6pt left indent
+
+**Heading 3:**
+- Font: Times New Roman, 12pt, Bold
+- Color: Clemson Regalia (#522D80)
+- Space before: 12pt, after: 6pt
+
+**Table of Contents:**
+- Font: Times New Roman, 11pt
+- Leaders: dots
+- Right-align page numbers
+
+**Code Style:**
+- Font: Courier New, 10pt
+- Background: Light Gray (RGB 248, 249, 250)
+- Border: 1pt, Clemson Orange left border
+
+**Caption:**
+- Font: Times New Roman, 10pt, Italic
+- Color: Clemson Regalia
+- Center alignment
+
+3. **Page Setup:**
+- Margins: 1 inch all around
+- Page size: Letter (8.5" x 11")
+- Header: Include chapter/section name in Clemson Regalia
+- Footer: Page number in Clemson Orange
+
+4. **Save the document** in the `styles/` folder as `reference-doc.docx`
+
+## Alternative: Use Quarto's Built-in Reference
+
+If you don't want to create a custom reference document, simply comment out the reference-doc line in your YAML (which is now done).

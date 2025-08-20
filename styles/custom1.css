@@ -1,0 +1,572 @@
+/*-- scss:defaults --*/
+
+/* Clemson University Brand Colors */
+:root {
+  --clemson-orange: #F56600;
+  --clemson-regalia: #522D80;
+  --clemson-orange-light: #FF7A1A;
+  --clemson-regalia-light: #6B3FA0;
+  --clemson-orange-dark: #D54500;
+  --clemson-regalia-dark: #3D1F5C;
+  --clemson-neutral-light: #F8F9FA;
+  --clemson-neutral-medium: #E9ECEF;
+  --clemson-neutral-dark: #343A40;
+}
+
+/*-- scss:rules --*/
+
+/* Global Typography and Layout */
+body {
+  text-align: justify;
+  font-family: "Latin Modern Roman", "Times New Roman", serif;
+  line-height: 1.6;
+  color: var(--clemson-neutral-dark);
+  background-color: #ffffff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Main content container */
+.page-body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Content wrapper */
+main.content {
+  max-width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Paragraph text wrapping */
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+/* Headings with Clemson Branding */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--clemson-regalia);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  color: var(--clemson-regalia);
+  border-bottom: 3px solid var(--clemson-orange);
+  padding-bottom: 0.5rem;
+  font-size: 2.25rem;
+}
+
+h2 {
+  color: var(--clemson-regalia);
+  border-left: 4px solid var(--clemson-orange);
+  padding-left: 1rem;
+  font-size: 1.75rem;
+}
+
+h3 {
+  color: var(--clemson-regalia-dark);
+  font-size: 1.5rem;
+}
+
+h4 {
+  color: var(--clemson-regalia);
+  font-size: 1.25rem;
+}
+
+/* Navigation and Navbar Styling */
+.navbar {
+  background-color: var(--clemson-regalia) !important;
+  border-bottom: 3px solid var(--clemson-orange);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--clemson-orange) !important;
+  transition: color 0.3s ease;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: var(--clemson-neutral-light);
+  border-right: 2px solid var(--clemson-orange);
+}
+
+.sidebar-title {
+  color: var(--clemson-regalia);
+  font-weight: 600;
+  border-bottom: 2px solid var(--clemson-orange);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-item {
+  border-radius: 0.375rem;
+  margin-bottom: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.sidebar-item:hover {
+  background-color: var(--clemson-orange-light);
+  transform: translateX(4px);
+}
+
+.sidebar-item-text {
+  color: var(--clemson-regalia);
+  font-weight: 500;
+}
+
+.sidebar-item.active {
+  background-color: var(--clemson-orange);
+  color: white;
+}
+
+.sidebar-item.active .sidebar-item-text {
+  color: white;
+  font-weight: 600;
+}
+
+/* Table of Contents */
+.toc-title {
+  color: var(--clemson-regalia);
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-bottom: 2px solid var(--clemson-orange);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 0.25rem 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.toc li:hover {
+  background-color: var(--clemson-neutral-medium);
+  transform: translateX(2px);
+}
+
+.toc a {
+  color: var(--clemson-regalia);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.toc a:hover {
+  color: var(--clemson-orange);
+}
+
+.toc .active > a {
+  color: var(--clemson-orange);
+  font-weight: 600;
+}
+
+/* Links */
+a {
+  color: var(--clemson-orange);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--clemson-orange-dark);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--clemson-regalia);
+}
+
+/* Code Blocks */
+pre {
+  background-color: var(--clemson-neutral-light);
+  border: 1px solid var(--clemson-neutral-medium);
+  border-left: 4px solid var(--clemson-orange);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-family: "Latin Modern Mono", "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+code {
+  background-color: var(--clemson-neutral-light);
+  color: var(--clemson-regalia-dark);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: "Latin Modern Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Code output */
+.cell-output pre {
+  background-color: #ffffff;
+  border: 1px solid var(--clemson-orange);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--clemson-regalia);
+  margin: 0.5rem 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+th {
+  background-color: var(--clemson-regalia);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--clemson-neutral-medium);
+}
+
+tr:nth-child(even) {
+  background-color: var(--clemson-neutral-light);
+}
+
+tr:hover {
+  background-color: rgba(245, 102, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Figures and Images */
+figure {
+  display: block;
+  text-align: center;
+  margin: 1.5rem auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 0.75rem;
+  color: var(--clemson-regalia);
+  font-style: italic;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+}
+
+/* Callouts and Alert Boxes */
+.callout {
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-left: 4px solid var(--clemson-orange);
+  background-color: var(--clemson-neutral-light);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.callout-title {
+  color: var(--clemson-regalia);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.callout-note {
+  border-left-color: var(--clemson-orange);
+  background-color: rgba(245, 102, 0, 0.05);
+}
+
+.callout-warning {
+  border-left-color: #FFC107;
+  background-color: rgba(255, 193, 7, 0.05);
+}
+
+.callout-important {
+  border-left-color: var(--clemson-regalia);
+  background-color: rgba(82, 45, 128, 0.05);
+}
+
+.callout-tip {
+  border-left-color: #28A745;
+  background-color: rgba(40, 167, 69, 0.05);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--clemson-orange);
+  margin: 1rem 0;
+  padding: 1rem 1.5rem;
+  background-color: var(--clemson-neutral-light);
+  border-radius: 0.375rem;
+  font-style: italic;
+  color: var(--clemson-regalia-dark);
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+ul li::marker {
+  color: var(--clemson-orange);
+}
+
+ol li::marker {
+  color: var(--clemson-regalia);
+  font-weight: 600;
+}
+
+/* Page Layout */
+.page-columns {
+  gap: 2rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Footer */
+.page-footer {
+  background-color: var(--clemson-regalia);
+  color: white;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  border-top: 3px solid var(--clemson-orange);
+}
+
+.page-footer a {
+  color: var(--clemson-orange);
+}
+
+.page-footer a:hover {
+  color: var(--clemson-orange-light);
+}
+
+/* Search */
+.aa-Input {
+  border: 2px solid var(--clemson-orange);
+  border-radius: 0.375rem;
+}
+
+.aa-Input:focus {
+  border-color: var(--clemson-regalia);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(82, 45, 128, 0.1);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 0.375rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--clemson-orange);
+  border-color: var(--clemson-orange);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--clemson-orange-dark);
+  border-color: var(--clemson-orange-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  background-color: var(--clemson-regalia);
+  border-color: var(--clemson-regalia);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: var(--clemson-regalia-dark);
+  border-color: var(--clemson-regalia-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Math Equations */
+.math.display {
+  font-size: 1.1rem;
+  color: var(--clemson-regalia-dark);
+  margin: 1.5rem 0;
+  text-align: center;
+  background-color: var(--clemson-neutral-light);
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--clemson-neutral-medium);
+}
+
+.math {
+  color: var(--clemson-regalia-dark);
+  font-size: 1rem;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: black;
+    page-break-after: avoid;
+  }
+  
+  figure, img, table {
+    page-break-inside: avoid;
+  }
+  
+  pre, code {
+    font-size: 10pt;
+  }
+  
+  .navbar, .sidebar, .page-footer {
+    display: none;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  .sidebar {
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  main {
+    padding: 0 0.5rem;
+  }
+  
+  figure {
+    padding: 0.5rem;
+  }
+  
+  pre {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  table {
+    font-size: 0.85rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clemson-orange: #FF7A1A;
+    --clemson-regalia: #7B5FAF;
+    --clemson-neutral-light: #2D3748;
+    --clemson-neutral-medium: #4A5568;
+    --clemson-neutral-dark: #E2E8F0;
+  }
+  
+  body {
+    background-color: #1A202C;
+    color: var(--clemson-neutral-dark);
+  }
+  
+  .navbar {
+    background-color: #2D3748 !important;
+  }
+  
+  .sidebar {
+    background-color: #2D3748;
+  }
+  
+  pre {
+    background-color: #2D3748;
+    color: #E2E8F0;
+  }
+  
+  table {
+    background-color: #2D3748;
+  }
+  
+  th {
+    background-color: var(--clemson-regalia);
+  }
+  
+  tr:nth-child(even) {
+    background-color: #374151;
+  }
+}
+
+
+

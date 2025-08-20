@@ -1,0 +1,2 @@
+n,p,mu,sigma,condition1,condition2,exact_prob,normal_approx,normal_no_correction,abs_error
+50,0.1,5,2.12132034355964,TRUE,TRUE,0.111728756346347,0.119296414658218,0.0786496035251426,0.0075676583118707

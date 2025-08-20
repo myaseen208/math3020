@@ -1,0 +1,2 @@
+mu_resistor,sigma_resistor,n_resistors,se_mean,z_score_95,prob_xbar_lt_95,prob_xbar_gt_105,ci_lower,ci_upper
+100,10,25,2,-2.5,0.00620966532577614,0.00620966532577614,96.0800720309199,103.91992796908

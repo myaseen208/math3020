@@ -1,0 +1,2 @@
+lambda,condition_met,mu,sigma,exact_prob,normal_approx,z_score,percentile_01,percentile_99
+1000,TRUE,1000,31.6227766016838,0.0542066738890186,0.0551384021943171,-1.59695021838503,927,1074
