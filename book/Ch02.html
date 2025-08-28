@@ -1,0 +1,3324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.20">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ch02 – Math-3020: Statistics for Science &amp; Engineering</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/LogoSMSS.webp" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bd0f20613ab34a035844aaae9062fb4e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b26e8146b40141c674d57af9b78800f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #522D80;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #522D80;
+      }
+</style>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/custom1.css">
+<link rel="stylesheet" href="styles/slides.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/LogoSMSS.webp" alt="SMSS Logo" class="navbar-logo light-content">
+    <img src="../images/LogoSMSS.webp" alt="SMSS Logo" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Math-3020</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book/index.html"> 
+<span class="menu-text">Lecture Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../slides/index.html"> 
+<span class="menu-text">Lecture Slides</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../introR/index.html"> 
+<span class="menu-text">Intro to R</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
+        <li class="dropdown-header">Data Sets</li>
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/MYaseen208"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/MYaseen208"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/muhammad-yaseen-247800b4/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text">LinkedIn</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../book/index.html">Table of Contents</a></li><li class="breadcrumb-item"><a href="../book/Ch02.html">Data Summary and Presentation</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../book/index.html">Table of Contents</a></li><li class="breadcrumb-item"><a href="../book/Ch02.html">Data Summary and Presentation</a></li></ol></nav></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Table of Contents</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book/Ch01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Role of Statistics in Engineering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book/Ch02.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data Summary and Presentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book/Ch03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Random Variables and Probability Distributions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book/Ch04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decision Making for a Single Sample</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book/Ch05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decision Making for Two Samples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book/Ch06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Building Empirical Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#data-summary-and-presentation" id="toc-data-summary-and-presentation" class="nav-link active" data-scroll-target="#data-summary-and-presentation"><span class="header-section-number">1</span> Data Summary and Presentation</a>
+  <ul class="collapse">
+  <li><a href="#data-summary-and-display" id="toc-data-summary-and-display" class="nav-link" data-scroll-target="#data-summary-and-display"><span class="header-section-number">1.1</span> Data Summary and Display</a>
+  <ul class="collapse">
+  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean"><span class="header-section-number">1.1.1</span> Mean</a></li>
+  <li><a href="#variance-and-standard-deviation" id="toc-variance-and-standard-deviation" class="nav-link" data-scroll-target="#variance-and-standard-deviation"><span class="header-section-number">1.1.2</span> Variance and Standard Deviation</a></li>
+  </ul></li>
+  <li><a href="#stem-and-leaf-diagram" id="toc-stem-and-leaf-diagram" class="nav-link" data-scroll-target="#stem-and-leaf-diagram"><span class="header-section-number">1.2</span> Stem-and-Leaf Diagram</a>
+  <ul class="collapse">
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">1.2.1</span> Example</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="data-summary-and-presentation" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Data Summary and Presentation</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Major Themes of Chapter 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Descriptive Statistics:</strong> Learn to compute and interpret measures of central tendency (mean, median) and variability (variance, standard deviation, range)</p></li>
+<li><p><strong>Data Visualization:</strong> Master key graphical displays including histograms, box plots, stem-and-leaf diagrams, and scatter plots</p></li>
+<li><p><strong>Distribution Analysis:</strong> Understand how to assess the shape, center, spread, and outliers in datasets</p></li>
+<li><p><strong>Time Series Patterns:</strong> Recognize trends, cycles, and other temporal patterns in engineering data</p></li>
+<li><p><strong>Multivariate Relationships:</strong> Explore relationships between multiple variables using correlation analysis and scatter plot matrices</p></li>
+<li><p><strong>Quality Tools:</strong> Apply Pareto charts and other specialized plots for engineering problem-solving</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After careful study of this chapter, you should be able to do the following:</p>
+<ol type="1">
+<li><p>Compute and interpret the <span style="color:green">sample mean</span>, <span style="color:green">sample variance</span>, <span style="color:green">sample standard deviation</span>, <span style="color:green">sample median</span>, and <span style="color:green">sample range</span>.</p></li>
+<li><p>Explain the concepts of <span style="color:green">sample mean</span>, <span style="color:green">sample variance</span>, <span style="color:green">population mean</span>, and <span style="color:green">population variance</span>.</p></li>
+<li><p>Construct and interpret visual data displays, including the <span style="color:green">stem-and-leaf display</span>, the <span style="color:green">histogram</span>, and the <span style="color:green">box plot</span> and understand how these graphical techniques are useful in uncovering and summarizing patterns in data.</p></li>
+<li><p>Explain how to use <span style="color:green">box plots</span> and other data displays to visually compare two or more samples of data.</p></li>
+<li><p>Know how to use simple <span style="color:green">time series plots</span> to visually display the important features of time-oriented data.</p></li>
+<li><p>Construct scatter plots and compute and interpret a <span style="color:green">sample correlation coefficient</span>.</p></li>
+</ol>
+</div>
+</div>
+<section id="data-summary-and-display" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="data-summary-and-display"><span class="header-section-number">1.1</span> Data Summary and Display</h2>
+<section id="mean" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">1.1.1</span> Mean</h3>
+<section id="sample-mean" class="level4">
+<h4 class="anchored" data-anchor-id="sample-mean">Sample Mean</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Sample Mean
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the <span class="math inline">n</span> observations in a sample are denoted by <span class="math inline">X_{1},X_{2},\ldots,X_{n}</span>, the <span style="color:green">sample mean</span> is</p>
+<p><span class="math display">\begin{aligned}
+\overline{X} &amp; = \frac{X_{1} + X_{2} + \cdots + X_{n}}{n} \\
+\overline{X} &amp; = \frac{\sum_{i=1}^{n} X_{i}}{n}
+\end{aligned}</span></p>
+</div>
+</div>
+</section>
+<section id="population-mean" class="level4">
+<h4 class="anchored" data-anchor-id="population-mean">Population Mean</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Population Mean
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When there is a finite number of observations (say, <span class="math inline">N</span>) in the population, the <span style="color:green">population mean</span> is</p>
+<p><span class="math display">\begin{aligned}
+\mu &amp; = \frac{\sum_{i=1}^{N} X_{i}}{N}
+\end{aligned}</span></p>
+</div>
+</div>
+<p>The sample mean, <span class="math inline">\overline{X}</span>, is a reasonable estimate of the population mean, <span class="math inline">\mu</span>.</p>
+</section>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">Example</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: O-Ring Tensile Strength
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Context:</strong> This example demonstrates how the sample mean serves as a measure of central tendency in materials testing. Understanding tensile strength is crucial for ensuring component reliability in aerospace applications.</p>
+<p>Consider the O-ring tensile strength experiment described in Chapter 1. The data from the modified rubber compound (1048, 1059, 1047, 1066, 1040, 1070, 1037, 1073) are shown in the <strong>dot diagram</strong> (<a href="#fig-Fig2.1" class="quarto-xref">Figure&nbsp;1</a> and <a href="#fig-Ch02Code01" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<p><strong>Manual Calculation:</strong> The sample mean strength (psi) for the eight observations is:</p>
+<p><span class="math display">\begin{aligned}
+\overline{X} &amp; = \frac{\sum_{i=1}^{n} X_{i}}{n} \\
+\overline{X} &amp; = \frac{1037 + 1047 + \cdots + 1073}{8} \\
+\overline{X} &amp; = \frac{8440}{8} = 1055  \text{ psi}
+\end{aligned}</span></p>
+<p><strong>Physical Interpretation:</strong> The sample mean <span class="math inline">\overline{X} = 1055</span> can be thought of as a “balance point.” If each observation represents 1 pound of mass placed at the point on the x-axis, a fulcrum located at <span class="math inline">\overline{X}</span> would exactly balance this system of weights.</p>
+<p><strong>Engineering Significance:</strong> This mean value provides a single representative measure that engineers can use to compare different rubber compounds or assess whether the material meets specifications.</p>
+<div id="fig-Fig2.1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Fig2.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Dot diagram of O-ring tensile strength. The sample mean is shown as a balance point for a system of weights."><img src="./images/Fig2.1.webp" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Fig2.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Dot diagram of O-ring tensile strength. The sample mean is shown as a balance point for a system of weights.
+</figcaption>
+</figure>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small">
+<caption>O-Ring Tensile Strength Statistics</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">n</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sum</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8440</td>
+<td style="text-align: right;">1055</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load required libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(fastverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(kit)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(car)</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># O-ring tensile strength example</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>tensile_data <span class="ot">&lt;-</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">data.table</span>(<span class="at">TS =</span> <span class="fu">c</span>(<span class="dv">1048</span>, <span class="dv">1059</span>, <span class="dv">1047</span>, <span class="dv">1066</span>, <span class="dv">1040</span>, <span class="dv">1070</span>, <span class="dv">1037</span>, <span class="dv">1073</span>))</span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a>tensile_data_summary1 <span class="ot">&lt;-</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>  tensile_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>  <span class="fu">fsummarise</span>(</span>
+<span id="cb1-18"><a href="#cb1-18"></a>    <span class="at">n =</span> <span class="fu">fnobs</span>(TS),</span>
+<span id="cb1-19"><a href="#cb1-19"></a>    <span class="at">sum =</span> <span class="fu">fsum</span>(TS),</span>
+<span id="cb1-20"><a href="#cb1-20"></a>    <span class="at">mean =</span> <span class="fu">fmean</span>(TS)</span>
+<span id="cb1-21"><a href="#cb1-21"></a>  )</span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a>tensile_data_summary1 <span class="sc">%&gt;%</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"O-Ring Tensile Strength Statistics"</span>, <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-Ch02Code01" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch02Code01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code01-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Dot diagram of O-ring tensile strength. The sample mean is shown as a balance point for a system of weights."><img src="Ch02_files/figure-html/fig-Ch02Code01-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch02Code01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Dot diagram of O-ring tensile strength. The sample mean is shown as a balance point for a system of weights.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Dot diagram showing sample mean as balance point</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> tensile_data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> TS)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">stackdir =</span> <span class="st">"up"</span>, <span class="at">dotsize =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">fmean</span>(TS)), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tensile Strength (psi)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">title =</span> <span class="st">"Sample Mean as Balance Point"</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(), <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="variance-and-standard-deviation" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="variance-and-standard-deviation"><span class="header-section-number">1.1.2</span> Variance and Standard Deviation</h3>
+<section id="sample-variance-and-sample-standard-deviation" class="level4">
+<h4 class="anchored" data-anchor-id="sample-variance-and-sample-standard-deviation">Sample Variance and Sample Standard Deviation</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Sample Variance and Sample Standard Deviation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the <span class="math inline">n</span> observations in a sample are denoted by <span class="math inline">X_{1},X_{2},\ldots,X_{n}</span>, then the <span style="color:green">sample variance</span> is</p>
+<p><span class="math display">\begin{aligned}
+S^2 &amp; = \frac{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}{n-1}
+\end{aligned}</span></p>
+<p>The <span style="color:green">sample standard deviation</span>, <span class="math inline">S</span>, is the positive square root of the <span style="color:green">sample variance</span>.</p>
+</div>
+</div>
+<p><strong>Engineering Perspective:</strong> The units of measurement for the sample variance are the square of the original units. Thus, if <span class="math inline">X</span> is measured in psi, the variance units are <span class="math inline">(\text{psi})^2</span>. The standard deviation has the desirable property of measuring variability in the original units (psi), making it more interpretable for engineers.</p>
+</section>
+<section id="example-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-1">Example</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: Variability in O-Ring Strength
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Why Variability Matters:</strong> In engineering applications, understanding variability is often more critical than knowing the average. High variability can indicate process instability, quality issues, or the need for tighter manufacturing controls.</p>
+<p>The numerator of <span class="math inline">S^2</span> is (See <a href="#tbl-Ch02Code02" class="quarto-xref">Table&nbsp;1</a>): <span class="math display">\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2} = 1348</span></p>
+<p><strong>Sample Variance Calculation:</strong></p>
+<p><span class="math display">\begin{aligned}
+S^2 &amp; = \frac{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}{n-1}
+= \frac{1348}{8-1} = 192.57 \text{ psi}^2 \end{aligned}</span></p>
+<p><strong>Sample Standard Deviation:</strong></p>
+<p><span class="math display">\begin{aligned}
+S &amp; = \sqrt{192.57} = 13.9 \text{ psi} \end{aligned}</span></p>
+<p><strong>Engineering Interpretation:</strong> A standard deviation of 13.9 psi means that most O-ring tensile strengths fall within about 14 psi of the mean (1055 psi). This gives engineers insight into the consistency of the manufacturing process.</p>
+<p><strong>Computational Note:</strong> <span class="math inline">\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}=\sum_{i=1}^{n}X_{i}^{2}-\frac{\left(\sum_{i=1}^{n}X_{i}\right)^{2}}{n}</span> (computational formula).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small">
+<caption>O-Ring Tensile Strength Statistics</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">var</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">192.57</td>
+<td style="text-align: right;">13.88</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>tensile_data_summary2 <span class="ot">&lt;-</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  tensile_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">fsummarise</span>(</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="at">var =</span> <span class="fu">fvar</span>(TS),</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="at">sd =</span> <span class="fu">fsd</span>(TS)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  )</span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a>tensile_data_summary2 <span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"O-Ring Tensile Strength Statistics"</span>, <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div id="tbl-Ch02Code02" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Ch02Code02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Variance Calculations
+</figcaption>
+<div aria-describedby="tbl-Ch02Code02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-striped table-hover do-not-create-environment cell caption-top table-sm small">
+<caption>Variance Calculation Terms</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">i</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Xi</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Xi - X̄</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">(Xi - X̄)²</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1048</td>
+<td style="text-align: right;">-7</td>
+<td style="text-align: right;">49</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1059</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">1047</td>
+<td style="text-align: right;">-8</td>
+<td style="text-align: right;">64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">1066</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">121</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">1040</td>
+<td style="text-align: right;">-15</td>
+<td style="text-align: right;">225</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: right;">1070</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">225</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: right;">1037</td>
+<td style="text-align: right;">-18</td>
+<td style="text-align: right;">324</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: right;">1073</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">324</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">8440</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1348</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-does-the-sample-variance-measure-variability" class="level4">
+<h4 class="anchored" data-anchor-id="how-does-the-sample-variance-measure-variability">How Does the Sample Variance Measure Variability?</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Understanding Variability Measurement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Insight:</strong> To see how the sample variance measures dispersion or variability, refer to <a href="#fig-Fig2.2" class="quarto-xref">Figure&nbsp;3</a>, which shows the deviations <span class="math inline">X_{i}-\overline{X}</span> for the O-ring tensile strength data.</p>
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><p>Greater variability → larger absolute deviations from the mean</p></li>
+<li><p>Deviations <span class="math inline">X_{i}-\overline{X}</span> always sum to zero</p></li>
+<li><p>Squaring eliminates negative values and emphasizes larger deviations</p></li>
+<li><p>Small <span class="math inline">S^2</span> indicates consistent process; large <span class="math inline">S^2</span> suggests high variability</p></li>
+</ul>
+<p><strong>Process Control Implications:</strong> Engineers use variance to monitor process stability. Increasing variance over time may signal equipment wear, material inconsistencies, or environmental factors affecting production.</p>
+<div id="fig-Fig2.2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Fig2.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.2.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: How the sample variance measures variability through the deviations X_{i}-\overline{X}."><img src="./images/Fig2.2.webp" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Fig2.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: How the sample variance measures variability through the deviations <span class="math inline">X_{i}-\overline{X}</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="population-variance" class="level4">
+<h4 class="anchored" data-anchor-id="population-variance">Population Variance</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Population Variance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When the population is finite and consists of <span class="math inline">N</span> values, we may define the population variance as</p>
+<p><span class="math display">\begin{aligned}
+\sigma^2 &amp; = \frac{\sum_{i=1}^{N}\left(X_{i}-\mu\right)^{2}}{N}
+\end{aligned}</span></p>
+</div>
+</div>
+<p>The sample variance, <span class="math inline">S^2</span>, is a reasonable estimate of the population variance, <span class="math inline">\sigma^2</span>.</p>
+</section>
+</section>
+</section>
+<section id="stem-and-leaf-diagram" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="stem-and-leaf-diagram"><span class="header-section-number">1.2</span> Stem-and-Leaf Diagram</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Stem-and-Leaf Diagram
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Application:</strong> Stem-and-leaf diagrams are particularly useful for initial data exploration in engineering. They preserve actual data values while showing distribution shape, making them ideal for quality control and process analysis.</p>
+<p>A stem-and-leaf diagram provides an informative visual display of a data set <span class="math inline">X_{1},X_{2},\ldots,X_{n}</span>, where each number <span class="math inline">X_{i}</span> consists of at least two digits.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Steps for Constructing a Stem-and-Leaf Diagram
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Divide each number <span class="math inline">X_{i}</span> into two parts: a stem (leading digits) and a leaf (remaining digit)</p></li>
+<li><p>List the stem values in a vertical column</p></li>
+<li><p>Record the leaf for each observation beside its stem</p></li>
+<li><p>Write the units for stems and leaves on the display</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<section id="example-2" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored"><span class="header-section-number">1.2.1</span> Example</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: Aluminum-Lithium Alloy Compressive Strength
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Context:</strong> This example analyzes compressive strength data from 80 aluminum-lithium alloy specimens. Such analysis is crucial for aerospace applications where weight reduction and strength are both critical.</p>
+<p><strong>Data Overview:</strong> The compressive strength measurements (in psi) from <a href="#tbl-table2.2" class="quarto-xref">Table&nbsp;2</a> represent quality control testing of a lightweight alloy used in aircraft components.</p>
+<div id="tbl-table2.2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table2.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Compressive Strength of 80 Aluminum-Lithium Alloy Specimens
+</figcaption>
+<div aria-describedby="tbl-table2.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>105</td>
+<td>221</td>
+<td>183</td>
+<td>186</td>
+<td>121</td>
+<td>181</td>
+<td>180</td>
+<td>143</td>
+</tr>
+<tr class="even">
+<td>97</td>
+<td>154</td>
+<td>153</td>
+<td>174</td>
+<td>120</td>
+<td>168</td>
+<td>167</td>
+<td>141</td>
+</tr>
+<tr class="odd">
+<td>245</td>
+<td>228</td>
+<td>174</td>
+<td>199</td>
+<td>181</td>
+<td>158</td>
+<td>176</td>
+<td>110</td>
+</tr>
+<tr class="even">
+<td>163</td>
+<td>131</td>
+<td>154</td>
+<td>115</td>
+<td>160</td>
+<td>208</td>
+<td>158</td>
+<td>133</td>
+</tr>
+<tr class="odd">
+<td>207</td>
+<td>180</td>
+<td>190</td>
+<td>193</td>
+<td>194</td>
+<td>133</td>
+<td>156</td>
+<td>123</td>
+</tr>
+<tr class="even">
+<td>134</td>
+<td>178</td>
+<td>76</td>
+<td>167</td>
+<td>184</td>
+<td>135</td>
+<td>229</td>
+<td>146</td>
+</tr>
+<tr class="odd">
+<td>218</td>
+<td>157</td>
+<td>101</td>
+<td>171</td>
+<td>165</td>
+<td>172</td>
+<td>158</td>
+<td>169</td>
+</tr>
+<tr class="even">
+<td>199</td>
+<td>151</td>
+<td>142</td>
+<td>163</td>
+<td>145</td>
+<td>171</td>
+<td>148</td>
+<td>158</td>
+</tr>
+<tr class="odd">
+<td>160</td>
+<td>175</td>
+<td>149</td>
+<td>87</td>
+<td>160</td>
+<td>237</td>
+<td>150</td>
+<td>135</td>
+</tr>
+<tr class="even">
+<td>196</td>
+<td>201</td>
+<td>200</td>
+<td>176</td>
+<td>150</td>
+<td>170</td>
+<td>118</td>
+<td>149</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>We select stem values as the numbers <span class="math inline">7, 8, 9, \ldots, 24</span> (representing tens place).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">R Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false"></a><a href="data/Exmp2.4.csv">Download Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="cell" data-tbl-cap="Stem-and-leaf diagram for the compressive strength data">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  The decimal point is 1 digit(s) to the right of the |
+
+   7 | 6
+   8 | 7
+   9 | 7
+  10 | 15
+  11 | 058
+  12 | 013
+  13 | 133455
+  14 | 12356899
+  15 | 001344678888
+  16 | 0003357789
+  17 | 0112445668
+  18 | 0011346
+  19 | 034699
+  20 | 0178
+  21 | 8
+  22 | 189
+  23 | 7
+  24 | 5</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Stem-and-leaf diagram for compressive strength data</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>compressive_data <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"./data/Exmp2.4.csv"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">stem</span>(compressive_data[, CS], <span class="at">scale =</span> <span class="dv">2</span>, <span class="at">width =</span> <span class="dv">80</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+
+</div>
+</div>
+</div>
+<p><strong>Engineering Interpretation:</strong> The stem-and-leaf display reveals:</p>
+<ul>
+<li><p>Most compressive strengths lie between 110 and 200 psi</p></li>
+<li><p>Central value is approximately 150-160 psi</p></li>
+<li><p>Distribution is approximately symmetric</p></li>
+<li><p>No obvious outliers or unusual patterns</p></li>
+<li><p>The alloy appears to have consistent strength properties</p></li>
+</ul>
+<p><strong>Quality Control Insights:</strong> This symmetric distribution suggests the manufacturing process is well-controlled. Engineers can use this information to set specification limits and monitor future production.</p>
+<section id="histograms" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="histograms"><span class="header-section-number">1.3</span> Histograms</h2>
+<section id="histogram" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="histogram"><span class="header-section-number">1.3.1</span> Histogram</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Histogram
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Definition:</strong> A histogram is a graphical representation of data distribution, showing frequency or relative frequency within specified intervals (bins). Histograms are essential tools for:</p>
+<ul>
+<li><p>Process capability analysis</p></li>
+<li><p>Quality control monitoring</p></li>
+<li><p>Design specification validation</p></li>
+<li><p>Statistical process control</p></li>
+</ul>
+<p>Each bin represents a range of values, and bar height reflects the number (or proportion) of data points in that range.</p>
+</div>
+</div>
+</section>
+<section id="example-3" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="example-3"><span class="header-section-number">1.3.2</span> Example</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: Golf Ball Distance Testing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Application:</strong> The USGA tests golf balls to ensure conformance to regulations. This standardized testing demonstrates how consistent measurement protocols are essential in engineering quality control.</p>
+<p><strong>Testing Protocol:</strong> Balls are tested using “Iron Byron,” a mechanical device that eliminates human variability, ensuring reproducible test conditions. This exemplifies the engineering principle of controlling sources of variation.</p>
+<div id="tbl-table2.3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table2.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Golf Ball Distance Data
+</figcaption>
+<div aria-describedby="tbl-table2.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>291.5</td>
+<td>274.4</td>
+<td>290.2</td>
+<td>276.4</td>
+<td>272.0</td>
+<td>268.7</td>
+<td>281.6</td>
+<td>281.6</td>
+<td>276.3</td>
+<td>285.9</td>
+</tr>
+<tr class="even">
+<td>269.6</td>
+<td>266.6</td>
+<td>283.6</td>
+<td>269.6</td>
+<td>277.8</td>
+<td>287.8</td>
+<td>267.6</td>
+<td>292.6</td>
+<td>273.4</td>
+<td>284.4</td>
+</tr>
+<tr class="odd">
+<td>270.7</td>
+<td>274.0</td>
+<td>285.2</td>
+<td>275.5</td>
+<td>272.1</td>
+<td>261.3</td>
+<td>274.0</td>
+<td>279.3</td>
+<td>281.0</td>
+<td>293.1</td>
+</tr>
+<tr class="even">
+<td>277.5</td>
+<td>278.0</td>
+<td>272.5</td>
+<td>271.7</td>
+<td>280.8</td>
+<td>265.6</td>
+<td>260.1</td>
+<td>272.5</td>
+<td>281.3</td>
+<td>263.0</td>
+</tr>
+<tr class="odd">
+<td>279.0</td>
+<td>267.3</td>
+<td>283.5</td>
+<td>271.2</td>
+<td>268.5</td>
+<td>277.1</td>
+<td>266.2</td>
+<td>266.4</td>
+<td>271.5</td>
+<td>280.3</td>
+</tr>
+<tr class="even">
+<td>267.8</td>
+<td>272.1</td>
+<td>269.7</td>
+<td>278.5</td>
+<td>277.3</td>
+<td>280.5</td>
+<td>270.8</td>
+<td>267.7</td>
+<td>255.1</td>
+<td>276.4</td>
+</tr>
+<tr class="odd">
+<td>283.7</td>
+<td>281.7</td>
+<td>282.2</td>
+<td>274.1</td>
+<td>264.5</td>
+<td>281.0</td>
+<td>273.2</td>
+<td>274.4</td>
+<td>281.6</td>
+<td>273.7</td>
+</tr>
+<tr class="even">
+<td>271.0</td>
+<td>271.5</td>
+<td>289.7</td>
+<td>271.1</td>
+<td>256.9</td>
+<td>274.5</td>
+<td>286.2</td>
+<td>273.9</td>
+<td>268.5</td>
+<td>262.6</td>
+</tr>
+<tr class="odd">
+<td>261.9</td>
+<td>258.9</td>
+<td>293.2</td>
+<td>267.1</td>
+<td>255.0</td>
+<td>269.7</td>
+<td>281.9</td>
+<td>269.6</td>
+<td>279.8</td>
+<td>269.9</td>
+</tr>
+<tr class="even">
+<td>282.6</td>
+<td>270.0</td>
+<td>265.2</td>
+<td>277.7</td>
+<td>275.5</td>
+<td>272.2</td>
+<td>270.0</td>
+<td>271.0</td>
+<td>284.3</td>
+<td>268.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Histogram Design Principles:</strong> With 100 observations, <span class="math inline">\sqrt{100} = 10</span> suggests about 10 bins for optimal visualization. The analysis reveals important distribution characteristics for engineering decision-making.</p>
+<p><strong>Engineering Insights from Histograms:</strong></p>
+<ul>
+<li><p><strong>Distribution Shape:</strong> The reasonably symmetric, bell-shaped distribution suggests the manufacturing process is well-controlled</p></li>
+<li><p><strong>Process Capability:</strong> The spread indicates natural process variation</p></li>
+<li><p><strong>Specification Conformance:</strong> Engineers can assess what percentage of balls meet distance requirements</p></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">R Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false"></a><a href="data/Exmp2.6.csv">Download Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div id="fig-Ch02Code04" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch02Code04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code04" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code04-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code04-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code04-1.png" class="lightbox" data-gallery="fig-Ch02Code04" title="Figure&nbsp;4&nbsp;(a): Histogram with 9 bins for the golf ball distance data"><img src="Ch02_files/figure-html/fig-Ch02Code04-1.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code04" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code04-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Histogram with 9 bins for the golf ball distance data
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code04" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code04-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code04-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code04-2.png" class="lightbox" data-gallery="fig-Ch02Code04" title="Figure&nbsp;4&nbsp;(b): Histogram with 16 bins for the golf ball distance data"><img src="Ch02_files/figure-html/fig-Ch02Code04-2.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code04" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code04-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Histogram with 16 bins for the golf ball distance data
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code04" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code04-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code04-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code04-3.png" class="lightbox" data-gallery="fig-Ch02Code04" title="Figure&nbsp;4&nbsp;(c): A relative frequency plot of the golf ball distance data"><img src="Ch02_files/figure-html/fig-Ch02Code04-3.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code04" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code04-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) A relative frequency plot of the golf ball distance data
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code04" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code04-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code04-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code04-4.png" class="lightbox" data-gallery="fig-Ch02Code04" title="Figure&nbsp;4&nbsp;(d): A cumulative frequency plot of the golf ball distance data"><img src="Ch02_files/figure-html/fig-Ch02Code04-4.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code04" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code04-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) A cumulative frequency plot of the golf ball distance data
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch02Code04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Histogram for the golf ball distance data
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Golf ball distance histograms</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>golf_data <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"./data/Exmp2.6.csv"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Basic histogram with 9 bins</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>p1 <span class="ot">&lt;-</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">ggplot</span>(golf_data, <span class="fu">aes</span>(<span class="at">x =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">9</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Distance (yards)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>, <span class="at">title =</span> <span class="st">"Histogram with 9 bins"</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="co"># Histogram with 16 bins</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>p2 <span class="ot">&lt;-</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a>  <span class="fu">ggplot</span>(golf_data, <span class="fu">aes</span>(<span class="at">x =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">16</span>, <span class="at">fill =</span> <span class="st">"lightgreen"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span></span>
+<span id="cb6-19"><a href="#cb6-19"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Distance (yards)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>, <span class="at">title =</span> <span class="st">"Histogram with 16 bins"</span>) <span class="sc">+</span></span>
+<span id="cb6-20"><a href="#cb6-20"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb6-21"><a href="#cb6-21"></a></span>
+<span id="cb6-22"><a href="#cb6-22"></a><span class="co"># Relative frequency histogram</span></span>
+<span id="cb6-23"><a href="#cb6-23"></a>p3 <span class="ot">&lt;-</span></span>
+<span id="cb6-24"><a href="#cb6-24"></a>  <span class="fu">ggplot</span>(golf_data, <span class="fu">aes</span>(<span class="at">x =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(count <span class="sc">/</span> <span class="fu">sum</span>(count))),</span>
+<span id="cb6-26"><a href="#cb6-26"></a>    <span class="at">bins =</span> <span class="dv">9</span>,</span>
+<span id="cb6-27"><a href="#cb6-27"></a>    <span class="at">fill =</span> <span class="st">"orange"</span>, <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb6-28"><a href="#cb6-28"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-29"><a href="#cb6-29"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb6-30"><a href="#cb6-30"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>), <span class="at">labels =</span> <span class="fu">percent_format</span>()) <span class="sc">+</span></span>
+<span id="cb6-31"><a href="#cb6-31"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Distance (yards)"</span>, <span class="at">y =</span> <span class="st">"Relative Frequency"</span>, <span class="at">title =</span> <span class="st">"Relative Frequency"</span>) <span class="sc">+</span></span>
+<span id="cb6-32"><a href="#cb6-32"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb6-33"><a href="#cb6-33"></a></span>
+<span id="cb6-34"><a href="#cb6-34"></a><span class="co"># Cumulative frequency histogram</span></span>
+<span id="cb6-35"><a href="#cb6-35"></a>p4 <span class="ot">&lt;-</span></span>
+<span id="cb6-36"><a href="#cb6-36"></a>  <span class="fu">ggplot</span>(golf_data, <span class="fu">aes</span>(<span class="at">x =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb6-37"><a href="#cb6-37"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(<span class="fu">cumsum</span>(count))),</span>
+<span id="cb6-38"><a href="#cb6-38"></a>    <span class="at">bins =</span> <span class="dv">10</span>,</span>
+<span id="cb6-39"><a href="#cb6-39"></a>    <span class="at">fill =</span> <span class="st">"pink"</span>, <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb6-40"><a href="#cb6-40"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-41"><a href="#cb6-41"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb6-42"><a href="#cb6-42"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span></span>
+<span id="cb6-43"><a href="#cb6-43"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Distance (yards)"</span>, <span class="at">y =</span> <span class="st">"Cumulative Frequency"</span>, <span class="at">title =</span> <span class="st">"Cumulative Frequency"</span>) <span class="sc">+</span></span>
+<span id="cb6-44"><a href="#cb6-44"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb6-45"><a href="#cb6-45"></a></span>
+<span id="cb6-46"><a href="#cb6-46"></a><span class="fu">print</span>(p1)</span>
+<span id="cb6-47"><a href="#cb6-47"></a><span class="fu">print</span>(p2)</span>
+<span id="cb6-48"><a href="#cb6-48"></a><span class="fu">print</span>(p3)</span>
+<span id="cb6-49"><a href="#cb6-49"></a><span class="fu">print</span>(p4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pareto-chart" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="pareto-chart"><span class="header-section-number">1.3.3</span> Pareto Chart</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Pareto Chart
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Application:</strong> Pareto charts are fundamental tools in quality engineering and process improvement, embodying the “80-20 rule” or “vital few vs.&nbsp;trivial many” principle. They help engineers prioritize improvement efforts by identifying the most significant causes of problems.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><p>Categories ordered by frequency (highest to lowest)</p></li>
+<li><p>Focuses attention on major contributors</p></li>
+<li><p>Guides resource allocation for maximum impact</p></li>
+<li><p>Essential for root cause analysis</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="example-4" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="example-4"><span class="header-section-number">1.3.4</span> Example</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: Aircraft Safety Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Context:</strong> This analysis of aircraft accident data demonstrates how Pareto charts help engineers identify critical safety issues and prioritize design improvements.</p>
+<p><strong>Data Source:</strong> Aircraft accident rates from <em>The Wall Street Journal</em> analysis, showing hull losses per million departures between 1959-1999 for 22 aircraft types.</p>
+<div id="tbl-table2.4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table2.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Aircraft Accident Data
+</figcaption>
+<div aria-describedby="tbl-table2.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Aircraft Type</th>
+<th>Actual Number of Hull Losses</th>
+<th>Hull Losses/Million Departures</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MD-11</td>
+<td>5</td>
+<td>6.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">707/720</td>
+<td>115</td>
+<td>6.46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DC-8</td>
+<td>71</td>
+<td>5.84</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F-28</td>
+<td>32</td>
+<td>3.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BAC 1-11</td>
+<td>22</td>
+<td>2.64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DC-10</td>
+<td>20</td>
+<td>2.57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">747-Early</td>
+<td>21</td>
+<td>1.9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Engineering Analysis:</strong> The top three aircraft types account for the majority of incidents on a per-million-departures basis. Notably:</p>
+<ul>
+<li><p><strong>707/720 and DC-8:</strong> Mid-1950s designs, largely out of service</p></li>
+<li><p><strong>MD-11:</strong> 1990s design with concerning safety record (5 losses out of 198 aircraft)</p></li>
+</ul>
+<p><strong>Process Improvement Insights:</strong> This Pareto analysis helps aviation engineers:</p>
+<ul>
+<li><p>Focus safety improvements on high-risk aircraft designs</p></li>
+<li><p>Understand the relationship between design era and safety performance</p></li>
+<li><p>Allocate research resources to address the “vital few” risk factors</p></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">R Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false"></a><a href="data/Exmp2.8.csv">Download Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-Ch02Code05" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch02Code05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code05-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;5: Pareto chart for the aircraft accident data"><img src="Ch02_files/figure-html/fig-Ch02Code05-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch02Code05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Pareto chart for the aircraft accident data
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Pareto chart for aircraft accident data</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>aircraft_data <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"./data/Exmp2.8.csv"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>aircraft_data <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">fmutate</span>(<span class="at">Type =</span> <span class="fu">factor</span>(Type, <span class="at">levels =</span> Type[<span class="fu">order</span>(<span class="sc">-</span>HLMD)])) <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Type, <span class="at">y =</span> HLMD)) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-11"><a href="#cb7-11"></a>    <span class="at">x =</span> <span class="st">"Aircraft Type"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12"></a>    <span class="at">y =</span> <span class="st">"Hull Losses per Million Departures"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13"></a>    <span class="at">title =</span> <span class="st">"Pareto Chart: Aircraft Accident Rates"</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="box-plot" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="box-plot"><span class="header-section-number">1.4</span> Box Plot</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Box Plot
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Applications:</strong> Box plots are powerful tools for engineering data analysis, providing comprehensive information about data distribution in a compact visual format.</p>
+<p><strong>What Box Plots Reveal:</strong></p>
+<ul>
+<li><p><span style="color:green">Measure of Central Tendency</span> (median)</p></li>
+<li><p><span style="color:green">Measure of Variability</span> (IQR, range)</p></li>
+<li><p><span style="color:green">Measure of Symmetry</span> (distribution shape)</p></li>
+<li><p><span style="color:red">Outliers</span> (unusual observations)</p></li>
+<li><p><span style="color:green">Group Comparisons</span> (process/design alternatives)</p></li>
+</ul>
+<div>
+<p><img src="./images/BoxWhiskerPlot.webp" class="img-fluid"> Box Whisker Plot</p>
+</div>
+<p><strong>Statistical Definitions:</strong></p>
+<p><span class="math display">
+\begin{align*}
+\text{Lower Inner Fence} &amp; =Q_{1}-1.5\times\text{IQR}\\
+\text{Upper Inner Fence} &amp; =Q_{3}+1.5\times\text{IQR}\\
+\text{Lower Outer Fence} &amp; =Q_{1}-3\times\text{IQR}\\
+\text{Upper Outer Fence} &amp; =Q_{3}+3\times\text{IQR}
+\end{align*}
+</span></p>
+<p><strong>Outlier Classification:</strong></p>
+<ul>
+<li><p><span style="color:blue">Mild Outlier</span>: Beyond inner fence (but inside outer fence)</p></li>
+<li><p><span style="color:red">Extreme Outlier</span>: Beyond outer fence</p></li>
+</ul>
+<p><strong>Engineering Interpretation:</strong> Whiskers extend to the most extreme values that are not outliers, helping engineers identify unusual measurements that may indicate process problems or measurement errors.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">R Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false"></a><a href="data/Exmp2.4.csv">Download Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div class="cell">
+<div id="fig-Ch02Code06-1" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch02Code06-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+Box Plot Statistics
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+q1
+</th>
+<th style="text-align:right;">
+median
+</th>
+<th style="text-align:right;">
+q3
+</th>
+<th style="text-align:right;">
+iqr
+</th>
+<th style="text-align:right;">
+lower_fence
+</th>
+<th style="text-align:right;">
+upper_fence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+144.5
+</td>
+<td style="text-align:right;">
+161.5
+</td>
+<td style="text-align:right;">
+181
+</td>
+<td style="text-align:right;">
+36.5
+</td>
+<td style="text-align:right;">
+89.75
+</td>
+<td style="text-align:right;">
+235.75
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch02Code06-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Box plot for compressive strength data
+</figcaption>
+</figure>
+</div>
+<div class="cell-output-display">
+<div id="fig-Ch02Code06-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch02Code06-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code06-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;7: Box plot for compressive strength data"><img src="Ch02_files/figure-html/fig-Ch02Code06-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch02Code06-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Box plot for compressive strength data
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Box plot for compressive strength data</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">ggplot</span>(compressive_data, <span class="fu">aes</span>(<span class="at">y =</span> CS)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.3</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="at">y =</span> <span class="st">"Compressive Strength (psi)"</span>, <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    <span class="at">title =</span> <span class="st">"Box Plot: Compressive Strength Distribution"</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb8-11"><a href="#cb8-11"></a></span>
+<span id="cb8-12"><a href="#cb8-12"></a>box_stats <span class="ot">&lt;-</span> compressive_data <span class="sc">%&gt;%</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">fsummarise</span>(</span>
+<span id="cb8-14"><a href="#cb8-14"></a>    <span class="at">q1 =</span> <span class="fu">fquantile</span>(CS, <span class="fl">0.25</span>),</span>
+<span id="cb8-15"><a href="#cb8-15"></a>    <span class="at">median =</span> <span class="fu">fmedian</span>(CS),</span>
+<span id="cb8-16"><a href="#cb8-16"></a>    <span class="at">q3 =</span> <span class="fu">fquantile</span>(CS, <span class="fl">0.75</span>),</span>
+<span id="cb8-17"><a href="#cb8-17"></a>    <span class="at">iqr =</span> <span class="fu">fquantile</span>(CS, <span class="fl">0.75</span>) <span class="sc">-</span> <span class="fu">fquantile</span>(CS, <span class="fl">0.25</span>),</span>
+<span id="cb8-18"><a href="#cb8-18"></a>    <span class="at">lower_fence =</span> <span class="fu">fquantile</span>(CS, <span class="fl">0.25</span>) <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> (<span class="fu">fquantile</span>(CS, <span class="fl">0.75</span>) <span class="sc">-</span> <span class="fu">fquantile</span>(CS, <span class="fl">0.25</span>)),</span>
+<span id="cb8-19"><a href="#cb8-19"></a>    <span class="at">upper_fence =</span> <span class="fu">fquantile</span>(CS, <span class="fl">0.75</span>) <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> (<span class="fu">fquantile</span>(CS, <span class="fl">0.75</span>) <span class="sc">-</span> <span class="fu">fquantile</span>(CS, <span class="fl">0.25</span>))</span>
+<span id="cb8-20"><a href="#cb8-20"></a>  )</span>
+<span id="cb8-21"><a href="#cb8-21"></a></span>
+<span id="cb8-22"><a href="#cb8-22"></a>box_stats <span class="sc">%&gt;%</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Box Plot Statistics"</span>, <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
+
+</div>
+</div>
+</div>
+<div id="fig-Fig2.3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Fig2.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.3.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;8: Comparative box plots of a quality index at three plants."><img src="./images/Fig2.3.webp" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Fig2.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Comparative box plots of a quality index at three plants.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="time-series-plots" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="time-series-plots"><span class="header-section-number">1.5</span> Time Series Plots</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Time Series Plots
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Importance:</strong> Time series analysis is critical in engineering for monitoring processes, identifying trends, and predicting future behavior. Understanding temporal patterns helps engineers:</p>
+<ul>
+<li><p>Detect process drift or shifts</p></li>
+<li><p>Identify cyclical behaviors</p></li>
+<li><p>Plan maintenance schedules</p></li>
+<li><p>Optimize production timing</p></li>
+</ul>
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><p><strong>Time Series:</strong> Data recorded in sequential order over time</p></li>
+<li><p><strong>Trend:</strong> Long-term increase or decrease in values</p></li>
+<li><p><strong>Cycles:</strong> Regular patterns that repeat over time</p></li>
+<li><p><strong>Seasonality:</strong> Predictable patterns related to calendar periods</p></li>
+</ul>
+<p><strong>Engineering Applications:</strong></p>
+<ul>
+<li><p>Equipment performance monitoring</p></li>
+<li><p>Quality control charts</p></li>
+<li><p>Production scheduling</p></li>
+<li><p>Predictive maintenance</p></li>
+</ul>
+<div id="fig-Fig2.4" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Fig2.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Fig2.4" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Fig2.4.1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Fig2.4.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.4.webp" class="lightbox" data-gallery="fig-Fig2.4" title="Figure&nbsp;9&nbsp;(a): Company sales by year"><img src="./images/Fig2.4.webp" class="img-fluid figure-img" data-ref-parent="fig-Fig2.4"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Fig2.4.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Company sales by year
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Fig2.4" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Fig2.4.2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Fig2.4.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.5.webp" class="lightbox" data-gallery="fig-Fig2.4" title="Figure&nbsp;9&nbsp;(b): Company sales by quarter"><img src="./images/Fig2.5.webp" class="img-fluid figure-img" data-ref-parent="fig-Fig2.4"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Fig2.4.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Company sales by quarter
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Fig2.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Company sales
+</figcaption>
+</figure>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">R Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false"></a><a href="data/time_series_example.csv">Download Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<div id="fig-Ch02Code07" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch02Code07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code07" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code07-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code07-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code07-1.png" class="lightbox" data-gallery="fig-Ch02Code07" title="Figure&nbsp;10&nbsp;(a): Annual sales trend"><img src="Ch02_files/figure-html/fig-Ch02Code07-1.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code07" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code07-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Annual sales trend
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code07" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code07-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code07-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code07-2.png" class="lightbox" data-gallery="fig-Ch02Code07" title="Figure&nbsp;10&nbsp;(b): Quarterly sales pattern"><img src="Ch02_files/figure-html/fig-Ch02Code07-2.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code07" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code07-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Quarterly sales pattern
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch02Code07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Time series plots showing trends and patterns
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Time series example (simulated company sales data)</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>time_data <span class="ot">&lt;-</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">data.table</span>(</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="at">year =</span> <span class="dv">2015</span><span class="sc">:</span><span class="dv">2024</span>,</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="at">quarter =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">length.out =</span> <span class="dv">40</span>),</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="at">sales =</span> <span class="dv">100</span> <span class="sc">+</span> <span class="fl">0.02</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> <span class="fu">sin</span>(<span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>) <span class="sc">/</span> <span class="dv">4</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb9-8"><a href="#cb9-8"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>  <span class="fu">fmutate</span>(<span class="at">time_period =</span> year <span class="sc">+</span> (quarter <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">4</span>)</span>
+<span id="cb9-10"><a href="#cb9-10"></a></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="co"># Annual sales trend</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>p5 <span class="ot">&lt;-</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a>  time_data <span class="sc">%&gt;%</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a>  <span class="fu">fgroup_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a>  <span class="fu">fsummarise</span>(<span class="at">annual_sales =</span> <span class="fu">fmean</span>(sales)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> annual_sales)) <span class="sc">+</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb9-18"><a href="#cb9-18"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb9-19"><a href="#cb9-19"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Average Sales"</span>, <span class="at">title =</span> <span class="st">"Annual Sales Trend"</span>) <span class="sc">+</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb9-21"><a href="#cb9-21"></a></span>
+<span id="cb9-22"><a href="#cb9-22"></a><span class="co"># Quarterly sales pattern</span></span>
+<span id="cb9-23"><a href="#cb9-23"></a>p6 <span class="ot">&lt;-</span></span>
+<span id="cb9-24"><a href="#cb9-24"></a>  <span class="fu">ggplot</span>(time_data, <span class="fu">aes</span>(<span class="at">x =</span> time_period, <span class="at">y =</span> sales)) <span class="sc">+</span></span>
+<span id="cb9-25"><a href="#cb9-25"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb9-26"><a href="#cb9-26"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-27"><a href="#cb9-27"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Time Period"</span>, <span class="at">y =</span> <span class="st">"Sales"</span>, <span class="at">title =</span> <span class="st">"Quarterly Sales Pattern"</span>) <span class="sc">+</span></span>
+<span id="cb9-28"><a href="#cb9-28"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb9-29"><a href="#cb9-29"></a></span>
+<span id="cb9-30"><a href="#cb9-30"></a><span class="fu">print</span>(p5)</span>
+<span id="cb9-31"><a href="#cb9-31"></a><span class="fu">print</span>(p6)</span>
+<span id="cb9-32"><a href="#cb9-32"></a></span>
+<span id="cb9-33"><a href="#cb9-33"></a><span class="fu">fwrite</span>(time_data, <span class="st">"data/time_series_example.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
+
+</div>
+</div>
+</div>
+<div id="fig-Fig2.6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Fig2.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.6.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figure&nbsp;11: A digidot plot of the compressive strength data."><img src="./images/Fig2.6.webp" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Fig2.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: A digidot plot of the compressive strength data.
+</figcaption>
+</figure>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">R Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-Ch02Code08" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch02Code08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code08-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figure&nbsp;12: Digital dot plot of compressive strength data"><img src="Ch02_files/figure-html/fig-Ch02Code08-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch02Code08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Digital dot plot of compressive strength data
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Digital dot plot</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>compressive_data <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">fmutate</span>(<span class="at">digit =</span> <span class="fu">round</span>(CS <span class="sc">/</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="dv">10</span>, <span class="at">count =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">fgroup_by</span>(digit) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">fsummarise</span>(<span class="at">frequency =</span> <span class="fu">fsum</span>(count)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> digit, <span class="at">y =</span> frequency)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> digit, <span class="at">yend =</span> <span class="dv">0</span>), <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    <span class="at">x =</span> <span class="st">"Compressive Strength (grouped by 10s)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
+<span id="cb10-11"><a href="#cb10-11"></a>    <span class="at">title =</span> <span class="st">"Digital Dot Plot"</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="multivariate-data" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="multivariate-data"><span class="header-section-number">1.6</span> Multivariate Data</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Multivariate Data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Reality:</strong> Most engineering problems involve multiple variables simultaneously. Understanding relationships between variables is essential for:</p>
+<ul>
+<li><p>Process optimization</p></li>
+<li><p>Design improvement</p></li>
+<li><p>Root cause analysis</p></li>
+<li><p>Predictive modeling</p></li>
+</ul>
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><p><strong>Univariate Analysis:</strong> Single variable (mean, variance, distribution)</p></li>
+<li><p><strong>Multivariate Analysis:</strong> Multiple variables and their relationships</p></li>
+<li><p><strong>Correlation:</strong> Strength of linear relationship between variables</p></li>
+<li><p><strong>Causation vs.&nbsp;Correlation:</strong> Important distinction for engineering decisions</p></li>
+</ul>
+</div>
+</div>
+<section id="example-5" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="example-5"><span class="header-section-number">1.6.1</span> Example</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: Wire Bond Strength Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Context:</strong> Wire bonding is a critical process in semiconductor manufacturing. Understanding how process parameters affect bond strength is essential for reliable electronic devices.</p>
+<p><strong>Process Variables:</strong></p>
+<ul>
+<li><p><strong>Pull Strength (Y):</strong> Response variable (quality measure)</p></li>
+<li><p><strong>Wire Length (X1):</strong> Process parameter</p></li>
+<li><p><strong>Die Height (X2):</strong> Design parameter</p></li>
+</ul>
+<div id="tbl-table2.5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table2.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Wire Bond Data
+</figcaption>
+<div aria-describedby="tbl-table2.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Obs No</th>
+<th style="text-align: right;">Pull Strength (Y)</th>
+<th style="text-align: right;">Wire Length (X1)</th>
+<th style="text-align: right;">Die Height (X2)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9.95</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">24.45</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">110</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">31.75</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">35.00</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">550</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">25.02</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">295</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">16.86</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">200</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">14.38</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">375</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9.60</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">24.35</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">27.50</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">300</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">17.08</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">412</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">37.00</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">400</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">41.95</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">500</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">11.66</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">360</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">21.65</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">205</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">17.89</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">400</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">69.00</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">600</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">10.30</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">585</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">34.93</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">540</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">46.59</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">250</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">44.88</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">290</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">54.12</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">510</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">56.63</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">590</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">22.13</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">21.15</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">400</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Engineering Questions:</strong></p>
+<ol type="1">
+<li><p>Which parameter most strongly affects bond strength?</p></li>
+<li><p>Are the parameters independent of each other?</p></li>
+<li><p>Can we predict strength from parameter settings?</p></li>
+</ol>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">R Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-3" role="tab" aria-controls="tabset-10-3" aria-selected="false"></a><a href="data/Table2.9.csv">Download Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
+<div id="fig-Ch02Code09" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch02Code09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code09" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code09-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code09-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code09-1.png" class="lightbox" data-gallery="fig-Ch02Code09" title="Figure&nbsp;13&nbsp;(a): Scatter plot for Pull strength versus length"><img src="Ch02_files/figure-html/fig-Ch02Code09-1.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code09" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code09-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Scatter plot for Pull strength versus length
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code09" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code09-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code09-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code09-2.png" class="lightbox" data-gallery="fig-Ch02Code09" title="Figure&nbsp;13&nbsp;(b): Scatter plot for Pull strength versus die height"><img src="Ch02_files/figure-html/fig-Ch02Code09-2.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code09" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code09-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Scatter plot for Pull strength versus die height
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code09" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code09-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code09-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code09-3.png" class="lightbox" data-gallery="fig-Ch02Code09" title="Figure&nbsp;13&nbsp;(c): Scatter and box plots for Pull strength versus length"><img src="Ch02_files/figure-html/fig-Ch02Code09-3.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code09" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code09-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Scatter and box plots for Pull strength versus length
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Ch02Code09" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Ch02Code09-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Ch02Code09-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code09-4.png" class="lightbox" data-gallery="fig-Ch02Code09" title="Figure&nbsp;13&nbsp;(d): Scatter and box plots for Pull strength versus die height"><img src="Ch02_files/figure-html/fig-Ch02Code09-4.png" class="img-fluid figure-img" data-ref-parent="fig-Ch02Code09" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Ch02Code09-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) Scatter and box plots for Pull strength versus die height
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch02Code09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Scatter diagrams and box plots for the wire bond pull strength data
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Wire bond data analysis</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>wire_data <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"./data/Table2.9.csv"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co"># Scatter plot: Pull strength vs Wire length</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>p7 <span class="ot">&lt;-</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">ggplot</span>(wire_data, <span class="fu">aes</span>(<span class="at">x =</span> X1, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Wire Length"</span>, <span class="at">y =</span> <span class="st">"Pull Strength"</span>, <span class="at">title =</span> <span class="st">"Pull Strength vs Wire Length"</span>) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb11-11"><a href="#cb11-11"></a></span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="co"># Scatter plot: Pull strength vs Die height</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a>p8 <span class="ot">&lt;-</span></span>
+<span id="cb11-14"><a href="#cb11-14"></a>  <span class="fu">ggplot</span>(wire_data, <span class="fu">aes</span>(<span class="at">x =</span> X2, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb11-16"><a href="#cb11-16"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Die Height"</span>, <span class="at">y =</span> <span class="st">"Pull Strength"</span>, <span class="at">title =</span> <span class="st">"Pull Strength vs Die Height"</span>) <span class="sc">+</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb11-19"><a href="#cb11-19"></a></span>
+<span id="cb11-20"><a href="#cb11-20"></a><span class="fu">print</span>(p7)</span>
+<span id="cb11-21"><a href="#cb11-21"></a><span class="fu">print</span>(p8)</span>
+<span id="cb11-22"><a href="#cb11-22"></a></span>
+<span id="cb11-23"><a href="#cb11-23"></a><span class="fu">library</span>(car)</span>
+<span id="cb11-24"><a href="#cb11-24"></a><span class="fu">scatterplot</span>(</span>
+<span id="cb11-25"><a href="#cb11-25"></a>  <span class="at">formula =</span> Y <span class="sc">~</span> X1,</span>
+<span id="cb11-26"><a href="#cb11-26"></a>  <span class="at">data =</span> wire_data,</span>
+<span id="cb11-27"><a href="#cb11-27"></a>  <span class="at">smooth =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-28"><a href="#cb11-28"></a>  <span class="at">regLine =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-29"><a href="#cb11-29"></a>  <span class="at">xlab =</span> <span class="st">"Length"</span>,</span>
+<span id="cb11-30"><a href="#cb11-30"></a>  <span class="at">ylab =</span> <span class="st">"Strength"</span></span>
+<span id="cb11-31"><a href="#cb11-31"></a>)</span>
+<span id="cb11-32"><a href="#cb11-32"></a></span>
+<span id="cb11-33"><a href="#cb11-33"></a><span class="fu">scatterplot</span>(</span>
+<span id="cb11-34"><a href="#cb11-34"></a>  <span class="at">formula =</span> Y <span class="sc">~</span> X2,</span>
+<span id="cb11-35"><a href="#cb11-35"></a>  <span class="at">data =</span> wire_data,</span>
+<span id="cb11-36"><a href="#cb11-36"></a>  <span class="at">smooth =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-37"><a href="#cb11-37"></a>  <span class="at">regLine =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-38"><a href="#cb11-38"></a>  <span class="at">xlab =</span> <span class="st">"Die height"</span>,</span>
+<span id="cb11-39"><a href="#cb11-39"></a>  <span class="at">ylab =</span> <span class="st">"Strength"</span></span>
+<span id="cb11-40"><a href="#cb11-40"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-10-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-3-tab">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sample-correlation-coefficient" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="sample-correlation-coefficient"><span class="header-section-number">1.6.2</span> Sample Correlation Coefficient</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Sample Correlation Coefficient
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Definition:</strong> The correlation coefficient quantifies the strength and direction of linear relationships between variables, crucial for understanding process interactions.</p>
+<p>Given <span class="math inline">n</span> pairs of data <span class="math inline">\left(X_{1},Y_{1}\right),\left(X_{2},Y_{2}\right),\ldots,\left(X_{n},Y_{n}\right)</span>:</p>
+<p><span class="math display">
+r=\frac{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)}{\sqrt{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}\sum_{i=1}^{n}\left(Y_{i}-\overline{Y}\right)^{2}}}
+</span></p>
+<p>where <span class="math inline">-1\leq r\leq+1</span>.</p>
+<p><strong>Engineering Interpretation:</strong></p>
+<ul>
+<li><p><strong>r ≈ +1:</strong> Strong positive relationship (as X increases, Y increases)</p></li>
+<li><p><strong>r ≈ -1:</strong> Strong negative relationship (as X increases, Y decreases)</p></li>
+<li><p><strong>r ≈ 0:</strong> Weak linear relationship (may still have nonlinear relationship)</p></li>
+</ul>
+<div id="fig-Fig2.7" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Fig2.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Fig2.7" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Fig2.7.1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Fig2.7.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.7.webp" class="lightbox" data-gallery="fig-Fig2.7" title="Figure&nbsp;14&nbsp;(a): r is near +1"><img src="./images/Fig2.7.webp" class="img-fluid figure-img" data-ref-parent="fig-Fig2.7"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Fig2.7.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) <span class="math inline">r</span> is near +1
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Fig2.7" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Fig2.7.2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Fig2.7.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.8.webp" class="lightbox" data-gallery="fig-Fig2.7" title="Figure&nbsp;14&nbsp;(b): r is near -1"><img src="./images/Fig2.8.webp" class="img-fluid figure-img" data-ref-parent="fig-Fig2.7"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Fig2.7.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) <span class="math inline">r</span> is near -1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Fig2.7" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Fig2.7.3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Fig2.7.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.9.webp" class="lightbox" data-gallery="fig-Fig2.7" title="Figure&nbsp;14&nbsp;(c): r is near 0, Y and X are unrelated"><img src="./images/Fig2.9.webp" class="img-fluid figure-img" data-ref-parent="fig-Fig2.7"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Fig2.7.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) <span class="math inline">r</span> is near 0, <span class="math inline">Y</span> and <span class="math inline">X</span> are unrelated
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-Fig2.7" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-Fig2.7.4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Fig2.7.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/Fig2.10.webp" class="lightbox" data-gallery="fig-Fig2.7" title="Figure&nbsp;14&nbsp;(d): r is near 0, Y and X are nonlinearly related"><img src="./images/Fig2.10.webp" class="img-fluid figure-img" data-ref-parent="fig-Fig2.7"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Fig2.7.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) <span class="math inline">r</span> is near 0, <span class="math inline">Y</span> and <span class="math inline">X</span> are nonlinearly related
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Fig2.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Scatter diagrams for different values of the sample correlation coefficient <span class="math inline">r</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="example-6" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="example-6"><span class="header-section-number">1.6.3</span> Example</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: Shampoo Quality Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Engineering Context:</strong> This multivariate analysis demonstrates how engineers evaluate product quality across multiple sensory and performance characteristics. Understanding these relationships helps optimize formulations.</p>
+<p><strong>Quality Variables:</strong></p>
+<ul>
+<li><p><strong>Foam:</strong> Lathering performance</p></li>
+<li><p><strong>Scent:</strong> Fragrance intensity</p></li>
+<li><p><strong>Color:</strong> Visual appeal</p></li>
+<li><p><strong>Residue:</strong> Cleansing effectiveness</p></li>
+<li><p><strong>Region:</strong> Market segment</p></li>
+<li><p><strong>Quality:</strong> Overall consumer rating</p></li>
+</ul>
+<div id="tbl-table2.6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table2.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Data on Shampoo
+</figcaption>
+<div aria-describedby="tbl-table2.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Foam</th>
+<th style="text-align: right;">Scent</th>
+<th style="text-align: right;">Color</th>
+<th style="text-align: right;">Residue</th>
+<th style="text-align: right;">Region</th>
+<th style="text-align: right;">Quality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">91</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">87</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">82</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">90</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">97</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8.3</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">93</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">82</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">7.2</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">87</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.7</td>
+<td style="text-align: right;">6.6</td>
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7.1</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">82</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">79</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">81</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">6.6</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">81</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Engineering Analysis Goals:</strong></p>
+<ol type="1">
+<li><p>Identify which characteristics most influence overall quality</p></li>
+<li><p>Understand relationships between formulation parameters</p></li>
+<li><p>Optimize product design for target markets</p></li>
+</ol>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">R Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-3" role="tab" aria-controls="tabset-11-3" aria-selected="false"></a><a href="data/Table2.11.csv">Download Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
+<div class="cell">
+<div id="tbl-Ch02Code10" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Ch02Code10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Correlation Matrix
+</figcaption>
+<div aria-describedby="tbl-Ch02Code10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-striped table-hover do-not-create-environment cell caption-top table-sm small">
+<caption>Shampoo Data Correlation Matrix</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Foam</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Scent</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Color</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Residue</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Quality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Foam</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.328</td>
+<td style="text-align: right;">0.193</td>
+<td style="text-align: right;">-0.032</td>
+<td style="text-align: right;">0.512</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Scent</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.599</td>
+<td style="text-align: right;">0.500</td>
+<td style="text-align: right;">0.278</td>
+<td style="text-align: right;">-0.252</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Color</td>
+<td style="text-align: right;">0.328</td>
+<td style="text-align: right;">0.599</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.524</td>
+<td style="text-align: right;">0.458</td>
+<td style="text-align: right;">-0.194</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residue</td>
+<td style="text-align: right;">0.193</td>
+<td style="text-align: right;">0.500</td>
+<td style="text-align: right;">0.524</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.165</td>
+<td style="text-align: right;">-0.489</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Region</td>
+<td style="text-align: right;">-0.032</td>
+<td style="text-align: right;">0.278</td>
+<td style="text-align: right;">0.458</td>
+<td style="text-align: right;">0.165</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">-0.507</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Quality</td>
+<td style="text-align: right;">0.512</td>
+<td style="text-align: right;">-0.252</td>
+<td style="text-align: right;">-0.194</td>
+<td style="text-align: right;">-0.489</td>
+<td style="text-align: right;">-0.507</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="table table-striped table-hover do-not-create-environment cell caption-top table-sm small">
+<caption>Shampoo Data Summary Statistics</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Foam_mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Foam_sd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Foam_min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Foam_max</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Scent_mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Scent_sd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Scent_min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Scent_max</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Color_mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Color_sd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Color_min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Color_max</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Residue_mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Residue_sd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Residue_min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Residue_max</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Region_mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Region_sd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Region_min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Region_max</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Quality_mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Quality_sd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Quality_min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Quality_max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">1.45</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">4.91</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">6.6</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">7.2</td>
+<td style="text-align: right;">4.03</td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.51</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">84.5</td>
+<td style="text-align: right;">4.36</td>
+<td style="text-align: right;">79</td>
+<td style="text-align: right;">97</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
+<div id="tbl-Ch02Code10" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-Ch02Code10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8
+</figcaption>
+<div aria-describedby="tbl-Ch02Code10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Shampoo data correlation matrix</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>shampoo_data <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"./data/Table2.11.csv"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(shampoo_data)</span>
+<span id="cb12-5"><a href="#cb12-5"></a>cor_matrix <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">round</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Shampoo Data Correlation Matrix"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span>
+<span id="cb12-9"><a href="#cb12-9"></a></span>
+<span id="cb12-10"><a href="#cb12-10"></a>shampoo_summary <span class="ot">&lt;-</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a>  shampoo_data <span class="sc">%&gt;%</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a>  <span class="fu">fsummarise</span>(</span>
+<span id="cb12-13"><a href="#cb12-13"></a>    <span class="fu">across</span>(</span>
+<span id="cb12-14"><a href="#cb12-14"></a>      <span class="at">.cols =</span> is.numeric,</span>
+<span id="cb12-15"><a href="#cb12-15"></a>      <span class="at">.fns =</span> <span class="fu">list</span>(</span>
+<span id="cb12-16"><a href="#cb12-16"></a>        <span class="at">mean =</span> fmean,</span>
+<span id="cb12-17"><a href="#cb12-17"></a>        <span class="at">sd =</span> fsd,</span>
+<span id="cb12-18"><a href="#cb12-18"></a>        <span class="at">min =</span> fmin,</span>
+<span id="cb12-19"><a href="#cb12-19"></a>        <span class="at">max =</span> fmax</span>
+<span id="cb12-20"><a href="#cb12-20"></a>      )</span>
+<span id="cb12-21"><a href="#cb12-21"></a>    )</span>
+<span id="cb12-22"><a href="#cb12-22"></a>  )</span>
+<span id="cb12-23"><a href="#cb12-23"></a></span>
+<span id="cb12-24"><a href="#cb12-24"></a>shampoo_summary <span class="sc">%&gt;%</span></span>
+<span id="cb12-25"><a href="#cb12-25"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Shampoo Data Summary Statistics"</span>, <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-26"><a href="#cb12-26"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</figure>
+</div>
+</div>
+<div id="tabset-11-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-3-tab">
+
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">R Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">R Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-3" role="tab" aria-controls="tabset-12-3" aria-selected="false"></a><a href="data/Table2.11.csv">Download Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-Ch02Code10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ch02Code10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="Ch02_files/figure-html/fig-Ch02Code10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figure&nbsp;15: Matrix of scatter plots for the shampoo data"><img src="Ch02_files/figure-html/fig-Ch02Code10-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ch02Code10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: Matrix of scatter plots for the shampoo data
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Matrix of scatter plots for shampoo data</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">ggpairs</span>(shampoo_data,</span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="at">title =</span> <span class="st">"Shampoo Quality Data: Pairwise Relationships"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"cor"</span>, <span class="at">size =</span> <span class="dv">3</span>))</span>
+<span id="cb13-5"><a href="#cb13-5"></a>) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-12-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-3-tab">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="key-engineering-takeaways" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="key-engineering-takeaways"><span class="header-section-number">1.7</span> Key Engineering Takeaways</h2>
+<p>This chapter provided essential tools for engineering data analysis:</p>
+<section id="statistical-foundations" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="statistical-foundations"><span class="header-section-number">1.7.1</span> <strong>Statistical Foundations</strong></h3>
+<ul>
+<li><p><strong>Measures of Central Tendency:</strong> Sample mean as balance point for process centering</p></li>
+<li><p><strong>Measures of Variability:</strong> Standard deviation for process control and capability analysis</p></li>
+<li><p><strong>Distribution Analysis:</strong> Understanding natural process variation patterns</p></li>
+</ul>
+</section>
+<section id="visualization-tools" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="visualization-tools"><span class="header-section-number">1.7.2</span> <strong>Visualization Tools</strong></h3>
+<ul>
+<li><p><strong>Histograms:</strong> Assess process capability and distribution normality</p></li>
+<li><p><strong>Box Plots:</strong> Identify outliers and compare process alternatives</p></li>
+<li><p><strong>Stem-and-Leaf:</strong> Quick distribution assessment preserving actual values</p></li>
+<li><p><strong>Pareto Charts:</strong> Prioritize improvement efforts using 80-20 principle</p></li>
+</ul>
+</section>
+<section id="process-analysis" class="level3" data-number="1.7.3">
+<h3 data-number="1.7.3" class="anchored" data-anchor-id="process-analysis"><span class="header-section-number">1.7.3</span> <strong>Process Analysis</strong></h3>
+<ul>
+<li><p><strong>Time Series:</strong> Monitor trends, detect shifts, identify cycles</p></li>
+<li><p><strong>Correlation Analysis:</strong> Understand variable relationships for optimization</p></li>
+<li><p><strong>Multivariate Methods:</strong> Analyze complex engineering systems</p></li>
+</ul>
+</section>
+<section id="engineering-applications" class="level3" data-number="1.7.4">
+<h3 data-number="1.7.4" class="anchored" data-anchor-id="engineering-applications"><span class="header-section-number">1.7.4</span> <strong>Engineering Applications</strong></h3>
+<ul>
+<li><p>Quality control and process improvement</p></li>
+<li><p>Design optimization and parameter selection</p></li>
+<li><p>Root cause analysis and problem solving</p></li>
+<li><p>Specification setting and capability assessment</p></li>
+</ul>
+<p>These statistical tools form the foundation for evidence-based engineering decisions and continuous improvement initiatives.</p>
+
+
+</section>
+</section>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Muhammad Yaseen. Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p><strong>Math-3020: Statistics for Science &amp; Engineering</strong></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/MYaseen208">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/MYaseen208">
+      <i class="bi bi-twitter" role="img" aria-label="Twitter">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/muhammad-yaseen-247800b4/">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"bottom","loop":false,"openEffect":"fade","selector":".lightbox","skin":"lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

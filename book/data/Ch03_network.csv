@@ -1,0 +1,2 @@
+rate_per_hour,time_interval_hours,time_interval_minutes,prob_no_events,mean_time_between,mean_time_minutes,var_time,prob_gt_15min
+25,0.1,6,0.0820849986238988,0.04,2.4,0.0016,0.00193045413622771

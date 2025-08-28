@@ -1,0 +1,472 @@
+---
+title: "The Role of Statistics in Engineering"
+subtitle: "Engineering Problem-Solving Through Statistical Thinking"
+author: "M. Yaseen"
+institute: "School of Mathematical and Statistical Sciences<br>Clemson University"
+format:
+  revealjs:
+    theme: [default, styles/custom.scss]
+    logo: images/LogoSMSS.png
+    footer: "The Role of Statistics in Engineering"
+    slide-number: c/t
+    chalkboard: true
+    touch: true
+    controls: true
+    width: 1600
+    height: 900
+    margin: 0.05
+execute:
+  echo: false
+  warning: false
+  message: false
+bibliography: references.bib
+---
+
+```{r}
+#| echo: false
+library(knitr)
+read_chunk("R/Ch01.R")
+```
+
+# Welcome to Engineering Statistics!
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Statistics: The Science of Uncertainty**
+
+- **Engineering Method:** Systematic problem-solving approach
+- **Data-Driven Decisions:** Transform uncertainty into actionable insights
+- **Variability Management:** Understanding and controlling variation
+- **Process Monitoring:** Continuous improvement through data
+:::
+
+::: {.column width="48%"}
+**Why Statistics Matters in Engineering:**
+
+- **Quality Control:** Ensure products meet specifications
+- **Process Optimization:** Improve efficiency and performance
+- **Risk Assessment:** Quantify and manage uncertainty
+- **Design Validation:** Verify engineering solutions work
+:::
+:::
+
+::: {.callout-tip}
+## Modern Engineering Reality
+Today's engineers must navigate uncertainty, manage variability, and make data-driven decisions in increasingly complex systems.
+:::
+
+---
+
+## Learning Objectives
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Statistical Foundations:**
+
+1. **Role of Statistics** in engineering problem-solving
+2. **Variability Impact** on data and decision-making
+3. **Population vs Sample** concepts and applications
+4. **Random Variables** and sources of variability
+:::
+
+::: {.column width="48%"}
+**Practical Applications:**
+
+5. **Statistical Reasoning** and the data-to-wisdom pipeline
+6. **Parameters vs Statistics** - inference fundamentals
+7. **Descriptive vs Inferential** statistics
+8. **Engineering Examples** with real-world applications
+:::
+:::
+
+**Goal:** Develop statistical reasoning skills essential for modern engineering practice.
+
+---
+
+# The Engineering Method and Statistical Thinking
+
+---
+
+## The Engineering Problem-Solving Method
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Traditional 8-Step Process:**
+
+1. **Problem Description** - Clear, concise definition
+2. **Factor Identification** - What affects the problem?
+3. **Model Proposal** - Scientific/engineering knowledge
+4. **Experimentation** - Test and validate hypotheses
+5. **Model Refinement** - Based on observed data
+6. **Solution Development** - Manipulate model for solutions
+7. **Solution Validation** - Confirm effectiveness
+8. **Conclusions** - Recommendations and decisions
+:::
+
+::: {.column width="48%"}
+**Statistical Integration:**
+
+- **Step 1-2:** Pattern recognition in data
+- **Step 3:** Statistical models and relationships
+- **Step 4:** Designed experiments and sampling
+- **Step 5:** Data analysis and model fitting
+- **Step 6:** Optimization and prediction
+- **Step 7:** Validation and testing
+- **Step 8:** Uncertainty quantification
+:::
+:::
+
+**Key Insight:** Statistics isn't separate from engineering - it's integral to every step!
+
+---
+
+## Engineering Foundation
+
+::: {.callout-note}
+## The Engineering Problem-Solving Method
+
+**Engineering Foundation:** Engineers solve problems of interest to society by the efficient application of **scientific principles**. The **engineering** or **scientific method** is the approach to formulating and solving these problems.
+
+**Statistical Integration:** In today's data-driven engineering environment, statistical methods are essential tools that complement traditional engineering analysis, helping engineers make sense of uncertain, variable data and draw reliable conclusions.
+:::
+
+![The engineering problem-solving method](./images/Fig1.1.webp){fig-align="center" width="800"}
+
+---
+
+## Statistics in Engineering Problem-Solving
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**1. Problem Recognition and Definition**
+
+- Helps identify patterns in data that indicate problems
+- Quantifies the magnitude and frequency of issues
+- Provides tools for problem prioritization
+
+**2. Hypothesis Formation**
+
+- Uses data analysis to suggest potential causes
+- Applies statistical models to test theories
+- Employs correlation analysis to identify relationships
+:::
+
+::: {.column width="48%"}
+**3. Data Collection and Analysis**
+
+- Designs efficient experiments and sampling plans
+- Provides methods for data quality assessment
+- Offers tools for exploratory data analysis
+
+**4. Conclusion and Decision Making**
+
+- Quantifies uncertainty in results
+- Provides confidence intervals and hypothesis tests
+- Enables risk-based decision making
+:::
+:::
+
+---
+
+# Manufacturing Process Investigation
+
+---
+
+## Engineering Example: Statistical Problem-Solving
+
+::: {.callout-note}
+## Example: Manufacturing Process Investigation
+
+**Engineering Context:** A manufacturing engineer notices increased variability in product dimensions, which could lead to quality issues and customer complaints. This demonstrates systematic application of statistical methods to engineering problem-solving.
+:::
+
+```{r}
+#| label: Ch01Code01
+```
+
+**Statistical Analysis Steps:**
+
+1. **Problem Recognition:** Control charts show process instability
+2. **Hypothesis Formation:** Possible causes include temperature, operator, or material variation
+3. **Data Collection:** Design experiment to test factors systematically
+4. **Analysis and Conclusion:** Statistical tests identify significant factors
+
+---
+
+# Probability and Statistics Fundamentals
+
+---
+
+## Probability: Quantifying Uncertainty
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Probability Concepts:**
+
+- Used to **quantify likelihood** or **chance**
+- Used to represent **risk** or **uncertainty** in engineering applications
+- Can be interpreted as our degree of **belief** or **relative frequency**
+
+**Key Probability Concepts:**
+
+- **Sample Space (S):** Set of all possible outcomes
+- **Event (A):** Subset of the sample space
+- **Probability P(A):** Measure of likelihood, where 0 ≤ P(A) ≤ 1
+:::
+
+::: {.column width="48%"}
+**Engineering Applications:**
+
+- **Reliability analysis:** P(component failure)
+- **Quality control:** P(defective product)
+- **Risk assessment:** P(system malfunction)
+- **Design optimization:** P(meeting specifications)
+- **Safety analysis:** P(hazardous events)
+:::
+:::
+
+---
+
+## Statistics: The Science of Learning from Data
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Statistics Definition:**
+
+Deals with the **collection**, **presentation**, **analysis**, and use of **data** to:
+
+- **Make decisions**
+- **Solve problems**
+- **Design products and processes**
+
+Statistical techniques are useful for describing and understanding **variability**.
+:::
+
+::: {.column width="48%"}
+**Variability in Engineering:**
+
+By **variability**, we mean successive observations of a system or phenomenon do not produce exactly the same result.
+
+**Statistics** gives us a framework for:
+
+- Describing this **variability**
+- Learning about potential **sources of variability**
+- Making decisions despite uncertainty
+:::
+:::
+
+---
+
+# Statistical Reasoning
+
+---
+
+## The Art and Science of Learning from Data
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Statistics** is the **science** of **uncertainty** & **variability**
+
+**Turning Data into Information:**
+
+**Data** → **Information** → **Knowledge** → **Wisdom**
+
+**The Statistical Thinking Process:**
+
+1. **Recognize the need for data-based decisions**
+2. **Understand the importance of data quality**
+3. **Appreciate the role of variability**
+4. **Use appropriate statistical methods**
+5. **Communicate results effectively**
+:::
+
+::: {.column width="48%"}
+![Big Data in Engineering](./images/BigData.webp){fig-align="center" width="400"}
+
+**Statistics** is the **Art** and **Science** of **learning** from **Data**.
+:::
+:::
+
+---
+
+# Key Definitions and Concepts
+
+---
+
+## Population vs. Sample
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Population**
+
+- **Set** of measurements of interest
+- Characteristics of the population (**parameters**) are typically of interest
+- Usually unknown and must be estimated
+
+**Sample**
+
+- **Subset** of measurements of interest
+- A characteristic of the **sample** (**statistic**) is used to **infer population characteristics** (**parameters**)
+- Observable and computable
+:::
+
+::: {.column width="48%"}
+**Parameter**
+
+- A **characteristic** of the **population** (usually unknown and estimated from sample data)
+- Examples: μ, σ, π
+
+**Statistic**
+
+- A **characteristic** of the **sample** (computed from observed data)
+- Examples: x̄ ,s ,p
+
+
+:::
+:::
+
+---
+
+## Types of Statistical Analysis
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Descriptive Statistics**
+
+- **Describing** the important **characteristics** of a set of data
+- Measures of central tendency (mean, median, mode)
+- Measures of variability (standard deviation, range)
+- Graphical displays (histograms, box plots)
+- Summary tables and charts
+:::
+
+::: {.column width="48%"}
+**Inferential Statistics**
+
+- Using **sample data** to make **inferences** (or **generalizations**) about a **population**
+- Hypothesis testing
+- Confidence intervals
+- Regression analysis
+- Analysis of variance (ANOVA)
+
+**Statistical Inference:** Making a statement about the population (**parameter**) based on the sample (**statistic**)
+:::
+:::
+
+---
+
+# O-Ring Development Example
+
+---
+
+## Population vs. Sample in Practice
+
+::: {.callout-note}
+## Example: O-Ring Development for Semiconductor Equipment
+
+**Engineering Context:** An engineer is developing a rubber compound for use in O-rings. The O-rings are to be employed as seals in plasma etching tools used in the semiconductor industry, so their resistance to acids and other corrosive substances is an important characteristic.
+
+The engineer uses the standard rubber compound to produce eight O-rings in a development laboratory and measures the tensile strength of each specimen after immersion in a nitric acid solution at 30°C for 25 minutes.
+:::
+
+**Data:** The tensile strengths (in psi) of the eight O-rings are:
+1030, 1035, 1020, 1049, 1028, 1026, 1019, and 1010
+
+```{r}
+#| label: Ch01Code02
+```
+
+---
+
+## Analysis of O-Ring Data
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Statistical Components:**
+
+- **Population:** All possible O-rings made with this rubber compound
+- **Sample:** The eight O-rings tested (n = 8)
+- **Parameter:** True mean tensile strength (μ) of all O-rings
+- **Statistic:** Sample mean tensile strength (x̄ = 1027.1 psi)
+:::
+
+::: {.column width="48%"}
+**Key Observation:**
+
+As we should have anticipated, not all the O-ring specimens exhibit the same measurement of tensile strength.
+
+This demonstrates the fundamental concept of **variability** in engineering measurements.
+:::
+:::
+
+::: {.callout-important}
+## Engineering Insight
+The variation in tensile strength is not a measurement error - it's real variability that must be understood and managed in the engineering design process.
+:::
+
+---
+
+# Random Variables and Variability
+
+---
+
+## Understanding Random Variables
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Random Variable Concept:**
+
+Since tensile strength **varies** or exhibits **variability**, it is a **random variable**.
+
+A **random variable** X can be modeled by:
+
+$$X = \mu + \epsilon$$
+
+where μ is a constant and ε is a random disturbance, or "noise" term.
+:::
+
+::: {.column width="48%"}
+**Sources of Variability:**
+
+- **Common Causes:** Natural variation inherent in the process
+- **Special Causes:** Unusual events that create additional variation
+- **Measurement Error:** Variation due to measurement system
+- **Environmental Factors:** Temperature, humidity, vibration effects
+:::
+:::
+
+::: {.callout-tip}
+## Engineering Application
+Understanding sources of variability helps engineers design more robust processes and make better decisions under uncertainty.
+:::
+
+---
+
+# Summary and Key Takeaways
+
+---
+
+## The Statistical Foundation of Modern Engineering
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Core Concepts Mastered:**
+
+- **Engineering Method:** Statistics integrated in every step
+- **Variability:** The reality of engineering measurements
+- **Population vs Sample:** Foundation of statistical inference
+- **Random Variables:** Mathematical framework for uncertainty
+:::
+
+::: {.column width="48%"}
+**Practical Skills Developed:**
+
+- **Statistical Thinking:** Data-driven problem solving
+- **Parameter Estimation:** Sample statistics to infer population parameters
+- **Variability Analysis:** Understanding sources and impacts
+- **Decision Making:** Under uncertainty with confidence
+:::
+:::
+
+
+---

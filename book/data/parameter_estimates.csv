@@ -1,0 +1,5 @@
+distribution,param1_name,param1_estimate,param2_name,param2_estimate
+Normal,mean,50.9040590863621,sd,9.08240332674002
+Exponential,rate,0.0958519012708974,,
+Weibull,shape,2.16162822712257,scale,98.9731544838128
+Lognormal,meanlog,3.97222231739645,sdlog,0.532007890439823

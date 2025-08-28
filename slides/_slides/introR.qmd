@@ -1,0 +1,815 @@
+---
+title: "Introduction to R, RStudio, and Quarto"
+subtitle: "A Beginner's Guide to Data Analysis"
+author: "M. Yaseen"
+institute: "School of Mathematical and Statistical Sciences<br>Clemson University"
+format:
+  revealjs:
+    theme: [default, styles/custom.scss]
+    logo: images/LogoSMSS.png
+    footer: "Introduction to R"
+    slide-number: c/t
+    chalkboard: true
+    touch: true
+    controls: true
+    width: 1600
+    height: 900
+    margin: 0.05
+execute:
+  echo: true
+  warning: false
+  message: false
+bibliography: references.bib
+---
+
+```{r}
+#| echo: false
+knitr::read_chunk("R/IntroR.R")
+```
+
+# Welcome to Data Analysis!
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Three Essential Tools:**
+
+- **R**: Free, powerful programming language for statistics
+- **RStudio**: User-friendly interface for R
+- **Quarto**: Modern publishing system for reports
+:::
+
+::: {.column width="48%"}
+**Complete Ecosystem for:**
+
+- Data import and cleaning
+- Statistical analysis
+- Professional visualizations
+- Reproducible reports
+- Scientific publishing
+:::
+:::
+
+::: {.callout-tip}
+## Why These Tools Matter
+Used by millions of data scientists, researchers, and analysts worldwide for everything from academic research to business intelligence.
+:::
+
+---
+
+## Why Use R, RStudio, and Quarto?
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Key Advantages:**
+
+- **Completely Free** - No licensing fees ever
+- **Beginner-Friendly** - Simple commands, intuitive interfaces
+- **Professional Results** - Publication-ready outputs
+- **Widely Used** - Industry standard tools
+- **Great Community** - Extensive help and tutorials
+:::
+
+::: {.column width="48%"}
+**Practical Benefits:**
+
+- **Reproducible Research** - Share and verify analyses
+- **Versatile Applications** - From simple calculations to complex modeling
+- **Multiple Output Formats** - HTML, PDF, Word from one source
+- **Version Control** - Track changes and collaborate effectively
+:::
+:::
+
+**Bottom Line:** These tools transform how you work with data, making complex analyses accessible and professional reporting automatic.
+
+---
+
+# Getting Started with R
+
+---
+
+## What is R?
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**R is Much More Than a Calculator:**
+
+- **Statistical Computing Environment** - Built by statisticians for data analysis
+- **Data Management System** - Handle datasets of any size
+- **Graphics Engine** - Beautiful, publication-ready charts
+- **Programming Language** - Automate repetitive tasks
+- **Statistical Toolkit** - Thousands of specialized functions
+:::
+
+::: {.column width="48%"}
+**What Makes R Special:**
+
+- **Designed for Data** - Tasks difficult elsewhere are straightforward in R
+- **Extensive Libraries** - Over 19,000 packages available
+- **Active Development** - Constantly updated with latest methods
+- **Cross-Platform** - Works on Windows, Mac, Linux
+- **Integration** - Connects with databases, web APIs, other languages
+:::
+:::
+
+---
+
+## Installing R
+
+**Simple 5-Step Process:**
+
+1. **Visit Official Website** - [https://cran.r-project.org/](https://cran.r-project.org/)
+2. **Choose Your OS** - Windows, macOS, or Linux
+3. **Download Latest Version** - Always get the most recent release
+4. **Run Installer** - Use default settings for beginners
+5. **Verify Installation** - Open R to confirm it works
+
+::: {.callout-tip}
+## Installation Tip
+CRAN (Comprehensive R Archive Network) is the official and safest source. Avoid third-party downloads to ensure authentic, secure software.
+:::
+
+**Next Step:** While R works alone, RStudio makes everything much easier!
+
+---
+
+## Basic Math in R
+
+```{r}
+#| label: Ch01Code01
+```
+
+**Key Concepts:**
+
+- **Explicit Arguments** - Use `x =` and `digits =` for clarity
+- **Variable Assignment** - Use `<-` to store values
+- **Function Calls** - Always include parentheses and argument names
+
+---
+
+## Working with Data Tables
+
+```{r}
+#| label: setup-packages
+#| echo: true
+#| message: false
+#| warning: false
+```
+
+```{r}
+#| label: Ch01Code02
+```
+
+**Why data.table?** Faster performance, intuitive syntax, memory efficient, better for beginners
+
+---
+
+## Basic Statistics with Fastverse
+
+```{r}
+#| label: Ch01Code03
+```
+
+**Essential Statistics Explained:**
+
+- **Mean**: Average of all values
+- **Max/Min**: Highest and lowest values  
+- **Standard Deviation**: How spread out the data is
+- **Count**: Number of observations
+
+---
+
+## Creating Professional Visualizations
+
+```{r}
+#| label: Ch01Code04
+#| fig-width: 10
+#| fig-height: 6
+```
+
+**Visualization Benefits:** Patterns become immediately obvious - Bob has highest grade (92), Charlie lowest (78)
+
+---
+
+# RStudio: Your R Interface
+
+---
+
+## What is RStudio?
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Integrated Development Environment (IDE):**
+
+RStudio transforms R from a basic command line into a professional workspace with:
+
+- **Syntax Highlighting** - Color-coded commands
+- **Auto-completion** - Faster, error-free coding  
+- **Project Management** - Organized workflows
+- **Integrated Help** - Documentation at your fingertips
+:::
+
+::: {.column width="48%"}
+**Four-Panel Layout:**
+
+1. **Script Editor** (top-left) - Write and save code
+2. **Console** (bottom-left) - Interactive R commands
+3. **Environment/History** (top-right) - See variables and past commands
+4. **Files/Plots/Help** (bottom-right) - Navigation and outputs
+:::
+:::
+
+**Bottom Line:** RStudio makes R accessible to beginners while remaining powerful for experts
+
+---
+
+## Installing RStudio
+
+**Prerequisites and Steps:**
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Before Installing:**
+
+- **R Must Be Installed First** - RStudio requires R to function
+- **Check R Installation** - Open R to verify it works
+
+**Installation Process:**
+
+1. Visit [https://posit.co/downloads/](https://posit.co/downloads/)
+2. Choose **RStudio Desktop** (free version)
+3. Download for your operating system
+4. Run installer with default settings
+:::
+
+::: {.column width="48%"}
+**After Installation:**
+
+- **Launch RStudio** - You should see four-panel interface
+- **Verify R Connection** - Console should show R version
+- **Explore Interface** - Familiarize yourself with panels
+
+**First Steps:**
+
+- Create a new script (File → New File → R Script)
+- Try typing `2 + 2` in console
+- Use Help panel to explore documentation
+:::
+:::
+
+---
+
+## Creating and Managing Projects
+
+```{r}
+#| label: Ch01Code05
+#| eval: false
+```
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Why Use Projects?**
+
+- **Organization** - Keep related files together
+- **Working Directory** - Automatic folder management
+- **Portability** - Easy sharing with collaborators
+- **Version Control** - Git integration for tracking changes
+:::
+
+::: {.column width="48%"}
+**Project Benefits:**
+
+- **Reproducibility** - Others can run your code easily
+- **Collaboration** - Share entire project folders
+- **Backup** - Everything in one place
+- **Scalability** - From simple analyses to complex research
+:::
+:::
+
+**Best Practice:** Always work within projects - it saves time and prevents errors!
+
+---
+
+# Introduction to Quarto
+
+---
+
+## What is Quarto?
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Next Generation Publishing System:**
+
+Quarto combines code, results, and narrative in professional documents:
+
+- **Code Execution** - Run R code automatically
+- **Dynamic Results** - Charts and tables update automatically  
+- **Professional Formatting** - Publication-ready appearance
+- **Multiple Formats** - HTML, PDF, Word from one source
+:::
+
+::: {.column width="48%"}
+**Reproducible Research Revolution:**
+
+**Traditional Approach Problems:**
+
+- Analyze in one program
+- Chart in another program  
+- Write in word processor
+- Manually copy results (error-prone!)
+
+**Quarto Solution:**
+
+- Everything in one document
+- Automatic updates when data changes
+- Complete transparency and reproducibility
+:::
+:::
+
+---
+
+## Installing Quarto
+
+**Simple Installation Process:**
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Installation Steps:**
+
+1. **Visit Official Site** - [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)
+2. **Download Installer** - Choose Windows, macOS, or Linux
+3. **Run with Defaults** - Standard installation handles everything
+4. **Restart RStudio** - Enables Quarto integration
+5. **Verify Installation** - Look for Quarto options in menus
+:::
+
+::: {.column width="48%"}
+**Integration Benefits:**
+
+- **Seamless RStudio Integration** - New file types available
+- **Render Buttons** - One-click document creation
+- **Preview Modes** - See results while writing
+- **Project Templates** - Quick start options
+- **Version Control** - Works with Git automatically
+:::
+:::
+
+**Result:** Professional document creation becomes as easy as writing an email!
+
+---
+
+## Output Formats
+
+::: {.columns style="gap: 1rem;"}
+::: {.column width="32%"}
+**HTML (Web Sharing)**
+```yaml
+format: html
+```
+
+**Best for:**
+
+- Interactive sharing
+- Online viewing  
+- Email distribution
+- Web publishing
+
+**Features:**
+
+- Interactive elements
+- Easy sharing via links
+- Mobile responsive
+- Search functionality
+:::
+
+::: {.column width="32%"}
+**PDF (Professional)**
+```yaml
+format: pdf
+```
+
+**Best for:**
+
+- Academic papers
+- Professional reports
+- Print documents
+- Archival purposes
+
+**Features:**
+
+- Page numbers
+- Professional typography
+- Print-ready quality
+- Consistent formatting
+:::
+
+::: {.column width="32%"}
+**Word (Collaboration)**
+```yaml
+format: docx
+```
+
+**Best for:**
+
+- Team collaboration
+- Client reviews
+- Comment workflows
+- Non-R users
+
+**Features:**
+
+- Microsoft Word compatible
+- Track changes support
+- Easy editing by others
+- Familiar interface
+:::
+:::
+
+**Power:** Write once, publish everywhere - same content, multiple professional formats!
+
+---
+
+## Complete Quarto Example
+
+```{r}
+#| label: Ch01Code06
+#| fig-width: 10
+#| fig-height: 5
+```
+
+**Key Features Demonstrated:** Automatic code execution, professional formatting, figure captioning, statistical analysis integration
+
+---
+
+# Working with Data Files
+
+---
+
+## Reading and Writing Data
+
+```{r}
+#| label: Ch01Code07
+#| eval: false
+```
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**File Format Comparison:**
+
+- **CSV Files** - Plain text, widely compatible, smaller size
+- **Excel Files** - Multiple sheets, formatting, larger size  
+- **data.table** - R-optimized, fastest performance
+
+**Why `fread()` over `read.csv()`?**
+
+- Much faster performance
+- Better type detection
+- More flexible with delimiters
+- Cleaner handling of messy data
+:::
+
+::: {.column width="48%"}
+**Best Practices:**
+
+- **Use relative paths** - "data/file.csv" not "C:/Users/..."
+- **Consistent naming** - lowercase, underscores, descriptive
+- **Organized folders** - separate data, scripts, outputs
+- **Backup originals** - never modify raw data files
+:::
+:::
+
+---
+
+## Practical Data Analysis Example
+
+```{r}
+#| label: Ch01Code08
+```
+
+---
+
+## Creating Comparison Visualizations
+
+```{r}
+#| label: Ch01Code09
+#| fig-width: 10
+#| fig-height: 6
+```
+
+**Insight:** Visualization immediately reveals that Math scores are highest on average, demonstrating the power of charts over tables alone.
+
+---
+
+# Essential Tips for Success
+
+---
+
+## Getting Help When You Need It
+
+```{r}
+#| label: Ch01Code10
+#| eval: false
+```
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Built-in Help System:**
+
+- **Function Help** - `?function_name` for documentation
+- **Search Help** - `help.search("topic")` for related functions
+- **Examples** - `example("function")` for working code
+- **Package Help** - `help(package = "packagename")` for overview
+:::
+
+::: {.column width="48%"}
+**External Resources:**
+
+- **Stack Overflow** - Huge Q&A community
+- **RStudio Community** - Friendly, helpful forum  
+- **R-bloggers** - Daily tutorials and tips
+- **Local User Groups** - In-person networking and learning
+- **Documentation Sites** - Official package guides
+:::
+:::
+
+**Remember:** Every expert was once a beginner - the R community is known for being welcoming and helpful!
+
+---
+
+## Common Mistakes and Solutions
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Critical Mistakes to Avoid:**
+
+1. **Case Sensitivity** - `Mean` ≠ `mean`
+2. **Quotation Marks** - Text needs quotes: `"Alice"`
+3. **Package Loading** - Always `library(package)` first
+4. **Parentheses** - Every `(` needs a `)`
+5. **Explicit Arguments** - Use `round(x = 3.14, digits = 2)`
+:::
+
+::: {.column width="48%"}
+**Project Organization:**
+```
+my-analysis/
+├── data/           # Raw data files
+├── R/              # R scripts  
+├── figures/        # Generated plots
+├── out/            # Output files
+└── README.md       # Project description
+```
+:::
+:::
+
+**Best Practice:** Develop good habits early - they save hours of debugging later!
+
+---
+
+## Keyboard Shortcuts for Efficiency
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Essential Shortcuts:**
+
+- **Ctrl+Enter** (Win) / **Cmd+Enter** (Mac) - Run current line
+- **Ctrl+Shift+Enter** - Run entire code chunk
+- **Tab** - Auto-complete function names
+- **Ctrl+Z** - Undo last action
+- **Ctrl+Shift+C** - Comment/uncomment lines
+:::
+
+::: {.column width="48%"}
+**Navigation Shortcuts:**
+
+- **Ctrl+L** - Clear console
+- **Ctrl+1** - Focus on script editor  
+- **Ctrl+2** - Focus on console
+- **Ctrl+S** - Save current file
+- **Ctrl+Shift+N** - New script file
+:::
+:::
+
+**Time Saver:** Master 3-4 shortcuts first, then gradually add more - they dramatically speed up your workflow!
+
+---
+
+## Troubleshooting Common Issues
+
+```{r}
+#| label: Ch01Code11
+#| eval: false
+```
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Package Problems:**
+
+- **"Package not found"** - Install first: `install.packages("packagename")`
+- **Loading errors** - Check package spelling and internet connection
+- **Version conflicts** - Update R and packages regularly
+- **Missing dependencies** - R usually installs these automatically
+:::
+
+::: {.column width="48%"}
+**Data Import Issues:**
+
+- **File not found** - Check file path and working directory
+- **Encoding problems** - Try `encoding = "UTF-8"` parameter
+- **Wrong delimiters** - Some "CSV" files use semicolons or tabs
+- **Path problems** - Use forward slashes: `"data/file.csv"`
+:::
+:::
+
+**Debug Strategy:** Read error messages carefully, Google specific errors, check documentation, ask for help - in that order!
+
+---
+
+# Conclusion and Next Steps
+
+---
+
+## What You've Accomplished Today
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Technical Skills Mastered:**
+
+✅ **Installation** - R, RStudio, Quarto setup  
+✅ **Basic Operations** - Math, statistics with fastverse  
+✅ **Data Management** - Creating and manipulating data.table  
+✅ **Visualizations** - Professional charts with ggplot2  
+✅ **Reports** - Dynamic documents with Quarto  
+✅ **Best Practices** - Explicit arguments, project organization
+:::
+
+::: {.column width="48%"}
+**Conceptual Understanding:**
+
+✅ **Reproducible Research** - Code + results + narrative  
+✅ **Modern Workflow** - Projects, version control, collaboration  
+✅ **Professional Output** - Multiple formats from one source  
+✅ **Community Resources** - Help systems and support networks  
+✅ **Troubleshooting** - Independent problem-solving skills
+:::
+:::
+
+**Achievement Unlocked:** You now have the foundation for modern data science!
+
+---
+
+## Your Learning Journey Continues
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Immediate Next Steps:**
+
+1. **Personal Project** - Analyze data you care about
+2. **Practice Explicit Arguments** - Always use parameter names
+3. **Reproduce This Tutorial** - Try with different data
+4. **Experiment with Styling** - Modify colors and themes
+5. **Master Basic Workflow** - Projects → Scripts → Reports
+:::
+
+::: {.column width="48%"}
+**Skill Development Path:**
+
+6. **Advanced ggplot2** - Scatter plots, histograms, faceting
+7. **Data Import Mastery** - Excel, databases, web APIs
+8. **Statistical Methods** - Regression, hypothesis testing
+9. **Advanced Quarto** - Presentations, websites, books
+10. **Package Ecosystem** - Specialized tools for your field
+:::
+:::
+
+**Remember:** Every expert started exactly where you are now - the key is consistent practice!
+
+---
+
+## Essential Learning Resources
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Free Online Books:**
+
+- **R for Data Science** [@wickham2016r] - The definitive beginner's guide
+- **Quarto Documentation** - Comprehensive feature guide  
+- **ggplot2 Book** [@wickham2016ggplot2] - Deep dive into visualization
+- **fastverse Documentation** - Efficient data manipulation
+
+**Interactive Learning:**
+
+- **RStudio Education** - Free courses and tutorials
+- **Swirl** - Learn R interactively within R
+- **DataCamp** - Structured courses (some free)
+:::
+
+::: {.column width="48%"}
+**Community Resources:**
+
+- **R-bloggers** - Daily articles and tutorials
+- **#RStats Twitter** - Active community sharing tips
+- **Local R Meetups** - Network with other users
+- **Stack Overflow** - Q&A for specific problems
+- **RStudio Community** - Friendly help forum
+
+**Professional Development:**
+
+- **Conferences** - useR!, rstudio::conf
+- **Certification** - RStudio certifications available
+- **Specialized Training** - Industry-specific workshops
+:::
+:::
+
+---
+
+## Final Encouragement
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**You're Joining a Global Community:**
+
+These tools are used daily by:
+
+- **Data Scientists** at Google, Netflix, Facebook
+- **Researchers** at universities worldwide  
+- **Analysts** in government and non-profits
+- **Students** in psychology, finance, biology
+- **Professionals** in healthcare, marketing, sports
+:::
+
+::: {.column width="48%"}
+**Remember:**
+
+- **Everyone starts as a beginner** - You're in good company
+- **The community is welcoming** - Don't hesitate to ask for help
+- **Practice makes progress** - Consistent work beats perfection
+- **Focus on problems you care about** - Personal interest drives learning
+- **Document your journey** - Future you will thank present you
+:::
+:::
+
+::: {.callout-tip}
+## Your Mantra Going Forward
+**Always use explicit argument names, save your work regularly, and don't hesitate to ask for help when you need it.**
+:::
+
+---
+
+## Thank You!
+
+::: {.columns style="gap: 2rem;"}
+::: {.column width="48%"}
+**Key Takeaways:**
+
+- **Free, powerful tools** for professional data analysis
+- **Reproducible research** changes how you work with data  
+- **Strong community support** for continuous learning
+- **Multiple output formats** from single source documents
+- **Modern workflow** that scales from simple to complex
+:::
+
+::: {.column width="48%"}
+**Contact & Resources:**
+
+- **Questions?** Use RStudio Community forum
+- **Advanced Help?** Stack Overflow with #r tag
+- **Stay Updated?** Follow R-bloggers and #RStats
+- **Local Community?** Search for R User Groups
+- **Official Docs?** R, RStudio, and Quarto websites
+:::
+:::
+
+**Happy Analyzing!** 🎉📊📈
+
+---
+
+## R Packages Used
+
+```{r}
+#| label: setup-packages1
+#| ref.label: setup-packages
+#| echo: true
+#| message: false
+#| warning: false
+```
+
+::: {.callout-note}
+## Package Ecosystem Overview
+
+**data.table** [@datatable2023] - High-performance data manipulation, much faster than base R data.frame
+
+**fastverse** - Collection of fast, complementary packages for efficient data science workflows
+
+**tidyverse** [@wickham2016r] - Integrated packages for data science: ggplot2, dplyr, readr, and more
+
+**readxl** & **openxlsx** - Read and write Excel files without requiring Excel installation
+
+**knitr** - Dynamic document generation and professional table formatting
+
+**ggplot2** [@wickham2016ggplot2] - Grammar of graphics for beautiful, publication-ready visualizations
+:::
+
+# References
+
+::: {#refs}
+:::

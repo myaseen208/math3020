@@ -1,0 +1,372 @@
+/*-- scss:defaults --*/
+$clemson-orange: #F56600;
+$clemson-regalia: #522D80;
+$light-gray: #f8f9fa;
+$border-gray: #e9ecef;
+
+/* Professional spacing variables - easy to adjust */
+$footer-height: 60px;
+$logo-height: 50px;
+$content-margin-bottom: 80px; /* Ensures content doesn't go behind footer */
+$slide-padding: 2rem;
+
+/*-- scss:rules --*/
+
+.reveal {
+  font-family: "Latin Modern Roman", serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Latin Modern Roman", serif;
+  color: $clemson-regalia;
+  text-transform: none;
+}
+
+/* Professional title slide styling */
+.reveal .title-slide {
+  text-align: center;
+  vertical-align: top;
+  padding-top: 12vh;
+}
+
+.reveal .title-slide h1.title {
+  text-align: center;
+  color: $clemson-regalia;
+  font-size: 3.2em;
+  margin-bottom: 0.4em;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.reveal .title-slide h2.subtitle {
+  text-align: center;
+  color: $clemson-orange;
+  font-size: 1.8em;
+  margin-bottom: 1.0em;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.reveal .title-slide .author {
+  text-align: center;
+  color: $clemson-regalia;
+  font-size: 1.4em;
+  margin-bottom: 0.4em;
+  font-weight: 500;
+}
+
+.reveal .title-slide .institute {
+  text-align: center;
+  color: $clemson-regalia;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* CRITICAL: Prevent content from going behind footer */
+.reveal .slides section {
+  padding-bottom: $content-margin-bottom !important;
+  box-sizing: border-box;
+}
+
+.reveal .slides section .content-above-footer {
+  margin-bottom: 1rem;
+}
+
+/* Fragment styling - NO FADE, immediate appearance */
+.reveal .fragment {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: none !important;
+}
+
+.reveal .fragment.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.reveal .fragment:not(.visible) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Code output positioning - ensure it stays above footer */
+.reveal .cell-output {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.reveal .cell-output pre {
+  background-color: #ffffff;
+  border: 2px solid $clemson-orange;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.9em;
+  color: $clemson-regalia;
+  margin: 0.5rem 0 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+}
+
+/* Professional footer - fixed height and positioning */
+.reveal .footer {
+  background-color: $clemson-regalia;
+  color: white;
+  padding: 15px 25px;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: $footer-height;
+  z-index: 1000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 3px solid $clemson-orange;
+}
+
+/* Professional logo positioning */
+.reveal .slide-logo {
+  position: fixed !important;
+  bottom: calc(#{$footer-height} + 10px) !important;
+  right: 25px !important;
+  height: $logo-height !important;
+  width: auto !important;
+  max-height: $logo-height !important;
+  z-index: 1001 !important;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: opacity 0.3s ease;
+}
+
+.reveal .slide-logo:hover {
+  opacity: 1;
+}
+
+/* Enhanced code styling */
+.reveal pre {
+  margin: 0.8rem 0 1.5rem 0;
+  max-height: 55vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.reveal pre code {
+  background-color: $light-gray;
+  border: 1px solid $border-gray;
+  border-radius: 8px;
+  padding: 1.2rem;
+  font-size: 0.9em;
+  line-height: 1.4;
+  display: block;
+  margin: 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Progress bar and controls styling */
+.reveal .progress {
+  color: $clemson-orange;
+  height: 4px;
+}
+
+.reveal .controls {
+  color: $clemson-orange;
+}
+
+.reveal .controls button {
+  color: $clemson-orange;
+}
+
+/* Slide numbers */
+.reveal .slide-number {
+  color: white;
+  background-color: $clemson-regalia;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8em;
+  border: 2px solid $clemson-orange;
+}
+
+/* Professional list styling */
+.reveal ul li {
+  margin: 0.6rem 0;
+  line-height: 1.5;
+}
+
+.reveal ol li {
+  margin: 0.6rem 0;
+  line-height: 1.5;
+}
+
+/* Enhanced callout styling */
+.reveal .callout.callout-style-default .callout-title {
+  background-color: $clemson-regalia;
+  color: white;
+  font-weight: 600;
+  padding: 12px 20px;
+}
+
+.reveal .callout.callout-style-default {
+  border-left: 5px solid $clemson-regalia;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+/* Column layout improvements - controlled spacing */
+.reveal .columns {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.reveal .column {
+  flex: 1;
+}
+
+/* Custom gap control - only when specified */
+.reveal .columns[style*="gap"] {
+  /* Gap is controlled by inline style */
+}
+
+/* Professional spacing utilities */
+.reveal .compact {
+  line-height: 1.3;
+}
+
+.reveal .compact ul li {
+  margin: 0.3rem 0;
+}
+
+.reveal .compact ol li {
+  margin: 0.3rem 0;
+}
+
+/* Font size utilities - easily adjustable */
+.reveal .font-tiny { font-size: 0.7em; }
+.reveal .font-small { font-size: 0.8em; }
+.reveal .font-normal { font-size: 1em; }
+.reveal .font-large { font-size: 1.2em; }
+.reveal .font-huge { font-size: 1.4em; }
+
+/* Slide-specific font controls */
+.reveal .slide-font-small {
+  font-size: 0.9em;
+}
+
+.reveal .slide-font-small h1,
+.reveal .slide-font-small h2,
+.reveal .slide-font-small h3 {
+  font-size: 1.3em;
+}
+
+.reveal .slide-font-tiny {
+  font-size: 0.8em;
+}
+
+.reveal .slide-font-tiny h1,
+.reveal .slide-font-tiny h2,
+.reveal .slide-font-tiny h3 {
+  font-size: 1.2em;
+}
+
+/* Background image controls */
+.reveal .slide-background {
+  background-size: 350px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.1;
+}
+
+.reveal .backgrounds .slide-background {
+  background-size: 350px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.1;
+}
+
+/* Professional responsive design */
+@media screen and (max-width: 768px) {
+  .reveal {
+    font-size: 28px;
+  }
+  
+  .reveal .title-slide {
+    padding-top: 8vh;
+  }
+  
+  .reveal .title-slide h1.title {
+    font-size: 2.2em;
+  }
+  
+  .reveal .title-slide h2.subtitle {
+    font-size: 1.4em;
+  }
+  
+  .reveal .title-slide .author {
+    font-size: 1.2em;
+  }
+  
+  .reveal .title-slide .institute {
+    font-size: 1em;
+  }
+  
+  .reveal pre code {
+    font-size: 0.75em;
+    padding: 0.8em;
+  }
+  
+  .reveal .cell-output pre {
+    font-size: 0.7em;
+    padding: 0.8em;
+  }
+  
+  .reveal .footer {
+    font-size: 0.75em;
+    padding: 10px 15px;
+    height: 45px;
+  }
+  
+  .reveal .slide-logo {
+    height: 35px !important;
+    bottom: calc(45px + 8px) !important;
+    right: 15px !important;
+  }
+  
+  .reveal .slides section {
+    padding-bottom: 65px !important;
+  }
+  
+  .reveal .slide-background {
+    background-size: 250px !important;
+  }
+}
+
+/* Print media adjustments */
+@media print {
+  .reveal .footer {
+    position: relative;
+    page-break-inside: avoid;
+  }
+  
+  .reveal .slide-logo {
+    position: relative;
+    display: block;
+    margin: 1rem auto;
+  }
+}
